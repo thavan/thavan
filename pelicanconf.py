@@ -7,6 +7,7 @@ SITENAME = u'Thavanathan'
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['assets']
 
 TIMEZONE = 'Europe/Paris'
 

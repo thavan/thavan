@@ -16,12 +16,12 @@ Creating Certificate: create a directory name httpd in your home directory and c
 
 It asks some information about the site. Most of them are optional.
 
-![Open ssl]({{ site.url }}/assets/openssl3.png)
+![Open ssl]({filename}/assets/openssl3.png)
 
 Now that we have created ssl certificate for our local web server. Two files will be created in the name of thava.org.crt and thava.org.key. Now we have to add them in our server.
 open apache ssl conf file, usually (/etc/httpd/conf.d/ssl.conf) and add the certificate path there. In below screenshot I have highlighted that part in red box. As I configure multiple sub-domains, I used virtual host. If you use only one main domain, you don't need to add virtual host.
 
-![Open ssl]({{ site.url }}/assets/openssl2.png)
+![Open ssl]({filename}/assets/openssl2.png)
 
 And finally, above certificate has been created for thava.org, so when you open the localhost url in browser, your browser will warn for a security exception. Ignore that warning and accept the security exception.
 
