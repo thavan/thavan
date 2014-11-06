@@ -1,3 +1,4 @@
+---
 Title: Static Site Generator
 Date: 2014-11-06 10:20
 Modified: 2014-11-06 10:20
@@ -7,6 +8,7 @@ Slug: static-site-generator
 Authors: Thavan
 Summary: Summary of popular static site generators.
 status: draft
+---
 
 I wanted to try static site generators long time. Here I'm not going to explain how to use a static site generator. Instead, I'm trying to explain what is statics generator and how it can help you to be more productive.
 
