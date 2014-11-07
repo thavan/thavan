@@ -1,13 +1,11 @@
----
 Title: Static Site Generator
 Date: 2014-11-06 10:20
 Modified: 2014-11-06 10:20
 Category: Python
-Tags: pelican, publishing
+Tags: pelican, publishing, blog, jekyll, static-site
 Slug: static-site-generator
 Authors: Thavan
-Summary: Summary of popular static site generators.
-status: draft
+Status: draft
 ---
 
 I wanted to try static site generators long time. Here I'm not going to explain how to use a static site generator. Instead, I'm trying to explain what is statics generator and how it can help you to be more productive.
@@ -53,3 +51,13 @@ Lets install Jekyll
 Now type `jekyll new` to configure a new jekyll site.
 
 Pelican:
+
+Pelican on the other hand is purely written in Python. If you are a Python fan, you have to try this first, because it will be easier to debug and change the code as you already knew python. Installing is very easy. Use pip.
+
+	:::bash
+	pip install pelican
+
+If you want to use markdown syntax, then install markdown
+
+	:::bash
+	pip install markdown
