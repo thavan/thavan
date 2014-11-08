@@ -1,5 +1,3 @@
----
-
 Title: Static Site Generator
 Date: 2014-11-06 10:20
 Modified: 2014-11-06 10:20
@@ -10,33 +8,26 @@ Authors: Thavan
 Status: draft
 ---
 
-I wanted to try static site generators long time. Here I'm not going to explain how to use a static site generator. Instead, I'm trying to explain what is statics generator and how it can help you to be more productive.
+Static site generators are tools that generators static sites i.e. raw html files. It means web pages are served as html files as it is. There won't be any kind of data processing, session management or user authentication system. This means this static html files can be placed in server that serves html files. We don't need a webserver that supports php, jsp, database, django etc. All you need is a webserver that serves static files.
 
-Static site generators are tools that generators static sites. This means this static html files can be placed in server and they are ready to serve. You don't need a webserver that supports php, jsp, database, django etc.. All you need is a webserver that serves static files.
+But ultimately, I'm fine with conventional blogging system, like blogger. Blogger supports custom domain. Setup a new blog and setup your custom domain, and you are ready to go with your new personal website. But configuring the blogger is somewhat tedious. Even though blogger provides extensive options to configure your blog's look and feel and layout, it always seems to be difficult to bring up a design up to my expectation. The other option is wordpress. In wordpress, to setup a custom domain, you have to pay for that, or you can host wordpress in your own website. I personally hate PHP. I don't want to take all the burder by installing and configuring LAMB stack in my server.
 
-But ultimately I'm fine with conventional blogging system, like blogger. Blogger supports custom domain. Setup a new blog and setup your custom domain to that blog and you are ready to go with your new personal website. But configuring the blogger is somewhat tedious. Eventhough blogger provides extensive options to configure your blogs look and feel and layout, it always seems to be difficult to bring a design that I personally like. 
+OK. How static site generators work?
 
-The other option is wordpress. In wordpress to setup a custom domain you have to pay for that, or you can host it in your own website. I personally hate PHP. I don't want to take all the burder by installing and configuring LAMB stack in my server.
-
-Here comes static site generator. It works like,
-
-* Write your posts in markup language.
-* Run the static site generator to create static html pages.
-* Host it anywhere.
+* Write your posts in `markdown` or `rst`.
+* Run the static site generator to parse these posts into html.
+* Upload the generated output to any server that serves html (or even host it in github).
 
 There are two main static site generators that really impresses me.
 
 * [Jekyll][jekyll] - A static site generator written in Ruby.
-* [Pelican][pelican] - A static site generator written in Python for all those Python fans.
+* [Pelican][pelican] - A static site generator written in Python.
 
-[jekyll]: http://jekyllrb.com/
-[pelican]: http://docs.getpelican.com/
+For me, both has their own pros and cons. Its up to you to choose any one of them. Both Pelican and Jekyll can be hosted in github pages.
 
 Jekyll
 ======
-For me, both has their own pros and cons. Its up to you to choose any one of them. Since GitHub pages supports Jekyll, I choose to go with Jekyll, and from here, this post follows Jekyll and leaves pelican behind. I assume that you are using Ubuntu.
-
-Lets install Jekyll
+Lets install Jekyll.
 
 	:::bash
 	wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.4.tar.gz
@@ -53,6 +44,32 @@ Lets install Jekyll
 	gem install jekyll # wait here. this step will take little bit longer without any indication.
 
 Now type `jekyll new` to configure a new jekyll site.
+
+Jekyll creates following three main folders.
+
+* `_drafts`: Place all drafts here. Once they are complete, move them to `_posts` directory.
+* `_posts`: Place all published and ready to publish posts here.
+* `_site`: jekyll will generate the site in this directory. This can be hosted to your webserver.
+
+I'm not going to explain how to write posts in markdown format. This post written in markdown format. Source can be found [here][post-source].
+Run `jekyll build` to build the posts and `jekyll serve` to preview them in local machine.
+
+Publishing
+==========
+If we want publish it in our own server, its going to be very easy. Just copy the folder _site in your webserver and you are good to go.
+Publishing in github pages, requires some further steps.
+
+* Assuming you have a github account, create a repository with the name username.github.io. Put your github username in the username part.
+* In your jekyll project directory, init the git repository.
+
+		:::bash
+		git init #Add the newly created repo as new remote origin.
+		git remote add origin <github project url> # add the newly created repo as remote origin
+		git add <directories> <files> # add all files.
+		git commit -m "Initial commit" # commit everything.
+		git push origin master # push to server.
+
+* Now wait for another twenty minutes, then your site will be up in http://username.github.io
 
 Pelican
 =======
@@ -91,3 +108,7 @@ Conclusion
 ----------
 Considering the fact of freedom to have your content on your hand and the freedom to host it anywhere, Static site generator seems to be a good option. No fancy widgets, no custom javascript codes, no commenting system. Put everything in an organized file structure, write posts in markdown and publish it. Publish whatever file types you want.
 
+[theme-repo]: https://github.com/getpelican/pelican-themes
+[jekyll]: http://jekyllrb.com/
+[pelican]: http://docs.getpelican.com/
+[post-source]: https://raw.githubusercontent.com/thavan/site/master/content/static-site-generators.md
