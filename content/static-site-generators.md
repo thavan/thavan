@@ -51,7 +51,7 @@ I'm not going to explain how to write posts in markdown format. This post writte
 Run `jekyll build` to build the posts and `jekyll serve` to preview them in local machine.
 
 Publishing
-==========
+----------
 If we want publish it in our own server, its going to be very easy. Just copy the folder _site in your webserver and you are good to go.
 Publishing in github pages, requires some further steps.
 
