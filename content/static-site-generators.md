@@ -1,21 +1,18 @@
 Title: Static Site Generator
-Date: 2014-11-06 10:20
-Modified: 2014-11-06 10:20
+Date: 2015-01-30 10:20
+Modified: 2015-01-30 10:20
 Category: Python
 Tags: pelican, publishing, blog, jekyll, static-site
 Slug: static-site-generator
 Authors: Thavan
-Status: draft
 
-Static site generators are tools that generators static sites i.e. raw html files. It means web pages are served as html files as it is. There won't be any kind of data processing, session management or user authentication system. This means this static html files can be placed in server that serves html files. We don't need a webserver that supports php, jsp, database, django etc. All you need is a webserver that serves static files.
-
-But ultimately, I'm fine with conventional blogging system, like blogger. Blogger supports custom domain. Setup a new blog and setup your custom domain, and you are ready to go with your new personal website. But configuring the blogger is somewhat tedious. Even though blogger provides extensive options to configure your blog's look and feel and layout, it always seems to be difficult to bring up a design up to my expectation. The other option is wordpress. In wordpress, to setup a custom domain, you have to pay for that, or you can host wordpress in your own website. I personally hate PHP. I don't want to take all the burder by installing and configuring LAMB stack in my server.
+Static site generators are tools that generators static sites i.e. pure html websites without backend data processing, session management or user authentication system. That is enough for good blog I think.
 
 OK. How static site generators work?
 
 * Write your posts in `markdown` or `rst`.
 * Run the static site generator to parse these posts into html.
-* Upload the generated output to any server that serves html (or even host it in github).
+* Upload the generated output to any server that serves html (or even host it in github pages).
 
 There are two main static site generators that really impresses me.
 
@@ -58,7 +55,7 @@ Publishing
 If we want publish it in our own server, its going to be very easy. Just copy the folder _site in your webserver and you are good to go.
 Publishing in github pages, requires some further steps.
 
-* Assuming you have a github account, create a repository with the name username.github.io. Put your github username in the username part.
+* Assuming you have a github account, create a repository with the name <username>.github.io. Replace <username> with your github username.
 * In your jekyll project directory, init the git repository.
 
 		:::bash
@@ -87,9 +84,7 @@ By running ``pelican-quickstart``, we can create a new pelican site from scratch
 
 Migrating from other blogging platforms
 ---------------------------------------
-Migrating from other blogs is pain when come of them. Eventhough there are lots tools availabel today, you'll have to manually make minor edits in all your previous posts. I used blogger before. After few attempts to import them in static site generator, I decided to leave the earlier posts blogger itself because they were not worthy to spend time to import them from blogger to static site. Jekyll has built-in support for importing posts from wordpress and few other networks. To import from blogger, you'll have to export them into xml in blogger dashboard, and import them in Jekyll or Pelican. There is no direct import option for blogger.
-
-Importing is going to cause some pain, but it is worth a try.
+Migrating from other blogs is a pain. Eventhough there are lots tools availabel today, you'll have to manually make minor edits in all your previous posts. I used blogger before. After few attempts to import them in static site generator, I decided to leave the earlier posts blogger itself because they were not worthy to spend time to import them from blogger to static site. Jekyll has built-in support for importing posts from wordpress and few other platforms. To import from blogger, you'll have to export them into xml in blogger dashboard, and import them in Jekyll or Pelican. There is no direct import option for blogger.
 
 Pelican Themes
 --------------
@@ -103,10 +98,11 @@ open pelican and add the following line.
 	:::python
 	THEME = "/home/user/pelican-themes/theme-name" # this should be path of downloaded theme.
 	
-Conclusion
+Commenting
 ----------
-Considering the fact of freedom to have your content on your hand and the freedom to host it anywhere, Static site generator seems to be a good option. No fancy widgets, no custom javascript codes, no commenting system. Put everything in an organized file structure, write posts in markdown and publish it. Publish whatever file types you want.
+The only thing that you will miss mostly is commenting in your posts. People can not comment in static sites. I don't actually care about any comments on my posts. Most people use third party commenting system like [Disqus][disqus-link]. It works well with static sites. Another option is to use google+ comments. 
 
+[disqus-link]: https://disqus.com/
 [theme-repo]: https://github.com/getpelican/pelican-themes
 [jekyll]: http://jekyllrb.com/
 [pelican]: http://docs.getpelican.com/
