@@ -1,10 +1,8 @@
----
-title: "A better Android music player?"
-layout: "post"
-date: "2013-08-10 17:17:00"
-updated: "2013-08-10 17:17:16"
-categories: [music player, android]
----
+Title: A better Android music player
+Date: 2013-08-10 17:17:00
+Modified: 2013-08-10 17:17:16
+Category: Android
+Tags: Android
 
 Initially I was regularly using the stock music player. It had a complete revamp recently and then the development is going on the way more towards Google play music and subscriptions. It plays the local music files but no theme support or any UI customization options and the sound quality is horrible.
 Then I tried PlayerPro. The main problem is app design. Even though it has all the features, they keep the old design. I'm the fan of new Holo design and it costs around $4.5 which is pretty high for a music app for me.

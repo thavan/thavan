@@ -6,7 +6,6 @@ Tags: pelican, publishing, blog, jekyll, static-site
 Slug: static-site-generator
 Authors: Thavan
 Status: draft
----
 
 Static site generators are tools that generators static sites i.e. raw html files. It means web pages are served as html files as it is. There won't be any kind of data processing, session management or user authentication system. This means this static html files can be placed in server that serves html files. We don't need a webserver that supports php, jsp, database, django etc. All you need is a webserver that serves static files.
 

@@ -1,10 +1,8 @@
----
-title: "Some great moments with my Bike"
-layout: "post"
-permalink: "/2011/12/some-great-moments-with-my-bike.html"
-date: "2011-12-24 09:05:00"
-updated: "2012-02-18 19:53:27"
----
+Title: Some great moments with my Bike
+Date: 2011-12-24 09:05:00
+Modified: 2012-02-18 19:53:27
+Category: Personal
+Tags: bike, travel, rtr, apache
 
 I have captured some of the moments with my bike.
 

@@ -1,15 +1,12 @@
----
-title: "Quell reflect - A zen puzzler game for Android"
-layout: "post"
-permalink: "/2012/05/quell-reflect-zen-puzzler-game-for.html"
-date: "2012-05-18 14:22:00"
-updated: "2012-05-18 14:22:33"
-tags: [android-games, android]
-catogories: [tech]
----
+Title: Quell reflect - A zen puzzler game for Android
+Date: 2012-05-18 14:22:00
+Modified: 2012-05-18 14:22:33
+Category: Android
+tags: android-games, android
+
 I was searching some games in Google Play store. Finding a game, you like within thousand of games, is toughest task. I install lots of game in my mobile and uninstall it within a hour. It gets bored in first play itself. Some games seems to be good but really lags in graphics.
 
-![Quil Reflect Image]({{ site.url }}/assets/quell-reflect.jpg)
+![Quil Reflect Image](/assets/quell-reflect.jpg)
 
 Interestingly, I found this game. <b>Quell Reflect</b>. It is actually a puzzler game. Your task is to collect the pearls using water drops. Every level makes you think a lot. If you try a lot, you will complete the level. But completing the level within minimum number of moves by avoiding obstacles is the challenging part of this game.
 
