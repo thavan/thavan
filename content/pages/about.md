@@ -7,4 +7,4 @@ Slug: about
 Authors: Thavan
 Summary: About me.
 
-My name is Thavanathan. You can contact me through tt[at]thava.me
+tt[at]thava.me
