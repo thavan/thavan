@@ -5,7 +5,7 @@ Slug: an-update-to-tamilnames-android-app
 Category: Android
 Tags: android, tamil-names
 
-I have published an update to TamilNames android app this week. This update includes the ability to search names by starting letters and gender. I've planned to include few more usablity improvements in future.
+I have published an update to TamilNames android app this week. This update includes the ability to search names by starting letters and gender. I've planned to include few more usability improvements in future.
 
 Grab it from [here][app-link].
 

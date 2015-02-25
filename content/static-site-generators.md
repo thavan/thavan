@@ -5,7 +5,7 @@ Category: Python
 Tags: pelican, publishing, blog, jekyll, static-site
 Slug: static-site-generators
 
-Static site generators are tools that generators static sites i.e. pure html websites without backend data processing, session management or user authentication system. That is enough for good blog I think.
+Static site generators are tools that generators static sites i.e. pure html websites without backend data processing, session management or user authentication system. That is enough for a blog I think.
 
 OK. How static site generators work?
 
@@ -78,7 +78,7 @@ If you want to use markdown syntax, then install markdown
 
 	:::bash
 	pip install markdown
-	
+
 By running ``pelican-quickstart``, we can create a new pelican site from scratch. Pelican also allows you to write post using `RST` format. When running the ``pelican-quickstart`` command, you will be asked if you want to create a make for the site. Click yes, and you'll get lots of handy shortcuts to important functions like ``make html`` will generate the htmls in output directory, ``make serve`` will start a development server in localhost so that we can preview the website.
 
 Migrating from other blogging platforms
@@ -91,15 +91,15 @@ There is a github repository, that accumulates all pelican themes in one repo. c
 
 	:::bash
 	git clone https://github.com/getpelican/pelican-themes.git
-	
+
 open pelican and add the following line.
 
 	:::python
 	THEME = "/home/user/pelican-themes/theme-name" # this should be path of downloaded theme.
-	
+
 Commenting
 ----------
-The only thing that you will miss mostly is commenting in your posts. People can not comment in static sites. I don't actually care about any comments on my posts. Most people use third party commenting system like [Disqus][disqus-link]. It works well with static sites. Another option is to use google+ comments. 
+The only thing that you will miss mostly is commenting in your posts. People can not comment in static sites. I don't actually care about any comments on my posts. Most people use third party commenting system like [Disqus][disqus-link]. It works well with static sites. Another option is to use google+ comments.
 
 [disqus-link]: https://disqus.com/
 [theme-repo]: https://github.com/getpelican/pelican-themes
