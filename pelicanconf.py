@@ -19,11 +19,13 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),)
+#LINKS = (('Pelican', 'http://getpelican.com/'),
+#         ('Python.org', 'http://python.org/'),)
 
 # Social widget
-SOCIAL = (('Google+', 'https://plus.google.com/u/0/+ThavanathanT/'),)
+SOCIAL = (('Google+', 'https://plus.google.com/u/0/+ThavanathanT/'),
+          ('Facebook', 'http://facebook.com/thavanathan'),
+          ('LinkedIn', 'https://www.linkedin.com/in/thavanathan'))
 
 DEFAULT_PAGINATION = 10
 
