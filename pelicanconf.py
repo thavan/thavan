@@ -30,6 +30,6 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-GOOGLE_ANALYTICS = 'UA-27795766-2'
+GOOGLE_ANALYTICS = 'UA-63651774-1'
 
 DELETE_OUTPUT_DIRECTORY = False
