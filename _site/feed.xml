@@ -1,5 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-24T08:13:24+05:30</updated><id>http://localhost:4000/</id><title type="html">Thavanathan</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">Reduce memory usage in Python using slots</title><link href="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html" rel="alternate" type="text/html" title="Reduce memory usage in Python using slots" /><published>2017-04-11T14:30:00+05:30</published><updated>2017-04-11T14:30:00+05:30</updated><id>http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots</id><content type="html" xml:base="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html">&lt;p&gt;slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-15T08:12:30+05:30</updated><id>http://localhost:4000/</id><title type="html">Thavanathan</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">Understanding web programming with Python 1</title><link href="http://localhost:4000/python/2017/11/14/understand-web-programming-with-python.html" rel="alternate" type="text/html" title="Understanding web programming with Python 1" /><published>2017-11-14T10:30:00+05:30</published><updated>2017-11-14T10:30:00+05:30</updated><id>http://localhost:4000/python/2017/11/14/understand-web-programming-with-python</id><content type="html" xml:base="http://localhost:4000/python/2017/11/14/understand-web-programming-with-python.html">&lt;p&gt;Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number of web frameworks out there to easily getting start with. But, it’s essential to understand the basics before diving into any one of those frameworks. Through these series of posts, we are going study fundamentals of web programming and explore advanced concepts and frameworks later. I use python here because I seems to be knowing it and I prefer it more than other languages when it comes to teaching.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with a web server. Web server is a computer program that simply delivers web pages. For example when you type &lt;a href=&quot;http://www.example.com&quot;&gt;www.example.com&lt;/a&gt; in your browser, a web server is what gives you that page. Web pages can be already stored in the server or can be generated dynamically. For example if you request this blog post, it’s very simple html page that is store on the server. server program just needs to fetch and return it to your browser.&lt;/p&gt;
+
+&lt;p&gt;But unfortunately this is not enough mechanism for facebook to work. Let’s say you request a page in facebook &lt;a href=&quot;&quot;&gt;http://www.facebook.com/friends/&lt;/a&gt;. When you request, Facebook needs check if you are logged in and need get all of your friends from a database and create a page with all these information and send it back to you. This is called dynamic web pages.&lt;/p&gt;
+
+&lt;p&gt;When it comes to dynamic web pages, a web server cannot do all the above mentioned tasks. Web server’s servers job is to essentially handle incoming requests very effectively, and return the response. but building a dynamic web page is not it’s task. Basically a programming languages is well suited for this task. That is where application servers comes into play.&lt;/p&gt;
+
+&lt;p&gt;Application servers on the other hand, are designed to process your requests with specific programming language. For example a Tomcat server is a Java application server. uwsgi is a Python application application server. These application servers understand languages like Python or Java.&lt;/p&gt;
+
+&lt;p&gt;Now we have three main components,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Web server: only serves pages - forwards requests to application server
+2. Application server. - process requests and generates response.
+3. A programming language. - used by application server.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Enough theory, let’s write some code to understand these concepts.&lt;/p&gt;
+
+&lt;h3 id=&quot;cgi&quot;&gt;CGI&lt;/h3&gt;
+&lt;p&gt;Let’s say we received a web request, and we want to process that request with python. In this case, we are going to use Apache web server. CGI is called common gateway interface. CGI is basically a script that is run by the web server whenever a request is received. The script can be a python script or a shell script or ruby script. Let’s create a cgi script to process our request.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# !/usr/bin/env python3&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Content-Type: text/plain;charset=utf-8&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Hello web!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;First line tells this script should run on default python3. Second line prints the header. We say to browser that whatever comes with this page is plain text. and the third line is the actual page content, in our case, it’s just a message ‘Hello web!’. Just notice every line printed on standard output is taken by cgi module and delivered to browser. Whatever things you want to send to browser, you just print them using print function.&lt;/p&gt;
+
+&lt;p&gt;Lets put this script on location and tell apache that there is a cgi script. First we have enable cgi module in httpd.conf (apache configuration file)&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;LoadModule&lt;/span&gt; cgi_module libexec/apache2/mod_cgi.so
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This line will already be there. Just make sure it’s not commented out. Let’s also tell apache that where to find this script&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt; &quot;/Library/WebServer/CGI-Executables&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
+&lt;/span&gt;     &lt;span class=&quot;nc&quot;&gt;AddHandler&lt;/span&gt; cgi-script .py
+     &lt;span class=&quot;nc&quot;&gt;Options&lt;/span&gt; +ExecCGI
+     &lt;span class=&quot;nc&quot;&gt;Require&lt;/span&gt; all granted
+ &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;/Library/WebServer/CGI-Executables is where we put hello.py. Now start apache.&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo httpd -k start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Starting apache command differs for different operating system, so look for online documentation about how to start you apache. We can now head to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost/cgi-bin/hello.py&lt;/code&gt; and see our first web application.&lt;/p&gt;</content><author><name></name></author><summary type="html">Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number of web frameworks out there to easily getting start with. But, it’s essential to understand the basics before diving into any one of those frameworks. Through these series of posts, we are going study fundamentals of web programming and explore advanced concepts and frameworks later. I use python here because I seems to be knowing it and I prefer it more than other languages when it comes to teaching.</summary></entry><entry><title type="html">Reduce memory usage in Python using slots</title><link href="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html" rel="alternate" type="text/html" title="Reduce memory usage in Python using slots" /><published>2017-04-11T14:30:00+05:30</published><updated>2017-04-11T14:30:00+05:30</updated><id>http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots</id><content type="html" xml:base="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html">&lt;p&gt;slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a 
 lot objects with fixed number of attributes. For example let’s assume we have a online shopping website. 
 whenever a user adds a item to the cart, we create a object for that item. For example,&lt;/p&gt;
 
