@@ -1,7 +1,11 @@
 ---
 title: Reduce memory usage in Python using slots
 date: 2017-04-11 09:00:00
-categories: python
+categories:
+    - Python
+tags:
+    - python-slots
+    - memory
 ---
 
 slots is a kind of Python magic that reduces memory usage of a program. It's useful only when we have a 

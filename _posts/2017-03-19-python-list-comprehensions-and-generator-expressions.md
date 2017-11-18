@@ -1,9 +1,9 @@
 ---
 title: Python List Comprehensions and generator expressions
 date: 2017-03-19 09:00:00
-categories: python
+categories:
+  - Python
 ---
-
 
 Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of 
 redundant and repetitive code. It helps creating lists, dictionaries and generators from other iterable objects 

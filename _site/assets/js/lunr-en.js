@@ -36,8 +36,8 @@
 <meta property="og:title" content="Thavanathan">
 
 
-  <link rel="canonical" href="http://localhost:4000/assets/js/lunr-en.js">
-  <meta property="og:url" content="http://localhost:4000/assets/js/lunr-en.js">
+  <link rel="canonical" href="https://www.thavanathan.com/assets/js/lunr-en.js">
+  <meta property="og:url" content="https://www.thavanathan.com/assets/js/lunr-en.js">
 
 
 
@@ -77,7 +77,7 @@
 <!-- end SEO -->
 
 
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Thavanathan Feed">
+<link href="https://www.thavanathan.com/feed.xml" type="application/atom+xml" rel="alternate" title="Thavanathan Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -89,7 +89,7 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="https://www.thavanathan.com/assets/css/main.css">
 
 <!--[if lte IE 9]>
   <style>
@@ -124,11 +124,11 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="http://localhost:4000/">Thavanathan</a>
+        <a class="site-title" href="https://www.thavanathan.com/">Thavanathan</a>
         <ul class="visible-links">
           
             
-            <li class="masthead__menu-item"><a href="http://localhost:4000/about/">About</a></li>
+            <li class="masthead__menu-item"><a href="https://www.thavanathan.com/about/">About</a></li>
           
         </ul>
         <button type="button">
@@ -156,7 +156,7 @@
     
       
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <a href="https://www.thavanathan.com/" itemprop="item"><span itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
         </li>
         <span class="sep">/</span>
@@ -164,7 +164,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="http://localhost:4000/assets" itemprop="item"><span itemprop="name">Assets</span></a>
+          <a href="https://www.thavanathan.com/assets" itemprop="item"><span itemprop="name">Assets</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -174,7 +174,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="http://localhost:4000/js" itemprop="item"><span itemprop="name">Js</span></a>
+          <a href="https://www.thavanathan.com/js" itemprop="item"><span itemprop="name">Js</span></a>
           <meta itemprop="position" content="3" />
         </li>
         <span class="sep">/</span>
@@ -322,7 +322,7 @@
     idx.add({
       title: "Python profiling",
       excerpt: "There are three main modules that provides time benchmarking in python. 1) timeit - call it for profiling small python...",
-      categories: ["python"],
+      categories: ["Python"],
       tags: [],
       id: 0
     });
@@ -331,7 +331,7 @@
     idx.add({
       title: "An Android app to search baby names",
       excerpt: "I have published a new Android app in Play Store called “Tamil Names”. It allows you to browse through a...",
-      categories: ["android"],
+      categories: ["Android"],
       tags: [],
       id: 1
     });
@@ -340,8 +340,8 @@
     idx.add({
       title: "Static Site Generators",
       excerpt: "Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or...",
-      categories: ["python,","pelican,","publishing,","blog,","jekyll,","static-site"],
-      tags: [],
+      categories: ["Python"],
+      tags: ["pelican","publishing","blog","jekyll","static-site"],
       id: 2
     });
     
@@ -349,8 +349,8 @@
     idx.add({
       title: "Crawling web pages using Python and Scrapy - Tutorial",
       excerpt: "In this post, let us walk through how we can crawl web pages using Scrapy.\n\n",
-      categories: ["crawl,","python,","scrapy"],
-      tags: [],
+      categories: ["Python"],
+      tags: ["crawling","scrapy"],
       id: 3
     });
     
@@ -358,7 +358,7 @@
     idx.add({
       title: "Python List Comprehensions and generator expressions",
       excerpt: "Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and...",
-      categories: ["python"],
+      categories: ["Python"],
       tags: [],
       id: 4
     });
@@ -367,8 +367,8 @@
     idx.add({
       title: "Reduce memory usage in Python using slots",
       excerpt: "slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have...",
-      categories: ["python"],
-      tags: [],
+      categories: ["Python"],
+      tags: ["python-slots","memory"],
       id: 5
     });
     
@@ -394,7 +394,7 @@ var store = [
       
       {
         "title": "Python profiling",
-        "url": "http://localhost:4000/python/2013/08/28/python-profiling.html",
+        "url": "https://www.thavanathan.com/python/python-profiling/",
         "excerpt": "There are three main modules that provides time benchmarking in python. 1) timeit - call it for profiling small python...",
         "teaser":
           
@@ -405,7 +405,7 @@ var store = [
       
       {
         "title": "An Android app to search baby names",
-        "url": "http://localhost:4000/android/2014/04/29/an-android-app.html",
+        "url": "https://www.thavanathan.com/android/an-android-app/",
         "excerpt": "I have published a new Android app in Play Store called “Tamil Names”. It allows you to browse through a...",
         "teaser":
           
@@ -416,7 +416,7 @@ var store = [
       
       {
         "title": "Static Site Generators",
-        "url": "http://localhost:4000/python,/pelican,/publishing,/blog,/jekyll,/static-site/2015/01/30/static-site-generators.html",
+        "url": "https://www.thavanathan.com/python/static-site-generators/",
         "excerpt": "Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or...",
         "teaser":
           
@@ -427,7 +427,7 @@ var store = [
       
       {
         "title": "Crawling web pages using Python and Scrapy - Tutorial",
-        "url": "http://localhost:4000/crawl,/python,/scrapy/2015/06/02/crawling-web-pages-with-scrapy.html",
+        "url": "https://www.thavanathan.com/python/crawling-web-pages-with-scrapy/",
         "excerpt": "In this post, let us walk through how we can crawl web pages using Scrapy. For this tutorial, we will...",
         "teaser":
           
@@ -438,7 +438,7 @@ var store = [
       
       {
         "title": "Python List Comprehensions and generator expressions",
-        "url": "http://localhost:4000/python/2017/03/19/python-list-comprehensions-and-generator-expressions.html",
+        "url": "https://www.thavanathan.com/python/python-list-comprehensions-and-generator-expressions/",
         "excerpt": "Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and...",
         "teaser":
           
@@ -449,7 +449,7 @@ var store = [
       
       {
         "title": "Reduce memory usage in Python using slots",
-        "url": "http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html",
+        "url": "https://www.thavanathan.com/python/python-save-memory-usage-with-slots/",
         "excerpt": "slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have...",
         "teaser":
           
@@ -460,7 +460,7 @@ var store = [
       
       {
         "title": "Understanding web programming with Python 1",
-        "url": "http://localhost:4000/python/understand-web-programming-with-python/",
+        "url": "https://www.thavanathan.com/python/understand-web-programming-with-python/",
         "excerpt": "Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number...",
         "teaser":
           
@@ -546,7 +546,7 @@ $(document).ready(function() {
     
     
     
-    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    <li><a href="https://www.thavanathan.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
@@ -556,7 +556,7 @@ $(document).ready(function() {
     </div>
 
     
-  <script src="http://localhost:4000/assets/js/main.min.js"></script>
+  <script src="https://www.thavanathan.com/assets/js/main.min.js"></script>
 
 
 

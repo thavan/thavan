@@ -1,8 +1,8 @@
 ---
 title: Python profiling
 date: 2013-08-28 09:16:00
-categories: python
-comments: true
+categories: 
+    - Python
 ---
 
 There are three main modules that provides time benchmarking in python.

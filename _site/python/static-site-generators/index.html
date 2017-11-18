@@ -1,0 +1,778 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.7.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Static Site Generators  Thavanathan</title>
+
+
+
+
+<meta name="description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.">
+
+
+
+
+<meta name="author" content="Thavanathan Thangaraj">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Thavanathan">
+<meta property="og:title" content="Static Site Generators">
+
+
+  <link rel="canonical" href="https://www.thavanathan.com/python/static-site-generators/">
+  <meta property="og:url" content="https://www.thavanathan.com/python/static-site-generators/">
+
+
+
+  <meta property="og:description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2015-01-30T10:20:00+05:30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://www.thavanathan.com/feed.xml" type="application/atom+xml" rel="alternate" title="Thavanathan Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.thavanathan.com/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://www.thavanathan.com/">Thavanathan</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://www.thavanathan.com/about/">About</a></li>
+          
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.thavanathan.com/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.thavanathan.com/categories/python" itemprop="item"><span itemprop="name">Python</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Static Site Generators</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Thavanathan Thangaraj</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Full stack developer. Python, Django enthusiast and teacher
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        <li>
+          <a href="http://www.thavanathan.com" itemprop="url">
+            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/pythavan" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Static Site Generators">
+    <meta itemprop="description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.">
+    <meta itemprop="datePublished" content="January 30, 2015">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Static Site Generators
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.</p>
+
+<p>How static site generators work?</p>
+
+<ul>
+  <li>Write your posts in <code class="highlighter-rouge">markdown</code> or <code class="highlighter-rouge">rst</code>.</li>
+  <li>Run the static site generator to parse these posts into html.</li>
+  <li>Upload the generated output to any server that serves html (or even host it in github pages).</li>
+</ul>
+
+<p>There are two main static site generators available today.</p>
+
+<ul>
+  <li><a href="http://jekyllrb.com/">Jekyll</a> - A static site generator written in Ruby.</li>
+  <li><a href="http://docs.getpelican.com/">Pelican</a> - A static site generator written in Python.</li>
+</ul>
+
+<p>For me, both has their own pros and cons. It’s up to you to choose any one of them. Both Pelican and Jekyll can be hosted in github pages.</p>
+
+<h1 id="jekyll">Jekyll</h1>
+<p>Lets install Jekyll.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.4.tar.gz
+<span class="nb">tar</span> <span class="nt">-zxvf</span> ruby-2.1.4.tar.gz
+<span class="nb">cd </span>ruby-2.1.4/
+./configure
+make
+<span class="nb">sudo </span>make install
+wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.2.tgz
+<span class="nb">tar</span> <span class="nt">-zxvf</span> rubygems-2.4.2.tgz
+<span class="nb">cd </span>rubygems-2.4.2/
+
+apt-get install rubygems
+gem install jekyll <span class="c"># wait here. this step will take little bit longer without any indication.</span></code></pre></figure>
+
+<p>Now type <code class="highlighter-rouge">jekyll new</code> to configure a new jekyll site.</p>
+
+<p>Jekyll creates following three main folders.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_drafts</code>: Place all drafts here. Once they are complete, move them to <code class="highlighter-rouge">_posts</code> directory.</li>
+  <li><code class="highlighter-rouge">_posts</code>: Place all published and ready to publish posts here.</li>
+  <li><code class="highlighter-rouge">_site</code>: jekyll will generate the site in this directory. This can be hosted to your webserver.</li>
+</ul>
+
+<p>I’m not going to explain how to write posts in markdown format. This post written in markdown format. Source can be found <a href="https://raw.githubusercontent.com/thavan/site/master/content/static-site-generators.md">here</a>.
+Run <code class="highlighter-rouge">jekyll build</code> to build the posts and <code class="highlighter-rouge">jekyll serve</code> to preview them in local machine.</p>
+
+<h2 id="publishing">Publishing</h2>
+<p>If we want publish it in our own server, its going to be very easy. Just copy the folder _site in your webserver and you are good to go.
+Publishing in github pages, requires some further steps.</p>
+
+<ul>
+  <li>Assuming you have a github account, create a repository with the name <username>.github.io. Replace <username> with your github username.</username></username></li>
+  <li>
+    <p>In your jekyll project directory, init the git repository.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  :::bash
+  git init #Add the newly created repo as new remote origin.
+  git remote add origin &lt;github project url&gt; # add the newly created repo as remote origin
+  git add &lt;directories&gt; &lt;files&gt; # add all files.
+  git commit -m "Initial commit" # commit everything.
+  git push origin master # push to server.
+</code></pre></div>    </div>
+  </li>
+  <li>Now wait for another twenty minutes, then your site will be up in http://username.github.io</li>
+</ul>
+
+<h1 id="pelican">Pelican</h1>
+
+<p>Pelican on the other hand is purely written in Python. If you are a Python fan, you have to try this first, because it will be easier to debug and change the code as you already knew python. Installing is very easy. Use pip.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+pip install pelican
+</code></pre></div></div>
+
+<p>If you want to use markdown syntax, then install markdown</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+pip install markdown
+</code></pre></div></div>
+
+<p>By running <code class="highlighter-rouge">pelican-quickstart</code>, we can create a new pelican site from scratch. Pelican also allows you to write post using <code class="highlighter-rouge">RST</code> format. When running the <code class="highlighter-rouge">pelican-quickstart</code> command, you will be asked if you want to create a make for the site. Click yes, and you’ll get lots of handy shortcuts to important functions like <code class="highlighter-rouge">make html</code> will generate the htmls in output directory, <code class="highlighter-rouge">make serve</code> will start a development server in localhost so that we can preview the website.</p>
+
+<h2 id="migrating-from-other-blogging-platforms">Migrating from other blogging platforms</h2>
+<p>Migrating from other blogs is a pain. Eventhough there are lots tools availabel today, you’ll have to manually make minor edits in all your previous posts. I used blogger before. After few attempts to import them in static site generator, I decided to leave the earlier posts blogger itself because they were not worthy to spend time to import them from blogger to static site. Jekyll has built-in support for importing posts from wordpress and few other platforms. To import from blogger, you’ll have to export them into xml in blogger dashboard, and import them in Jekyll or Pelican. There is no direct import option for blogger.</p>
+
+<h2 id="pelican-themes">Pelican Themes</h2>
+<p>There is a github repository, that accumulates all pelican themes in one repo. clone <a href="https://github.com/getpelican/pelican-themes">this</a> repository from github and you’ll be able to use theme by adding the theme directory in pelican settings file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::bash
+git clone https://github.com/getpelican/pelican-themes.git
+</code></pre></div></div>
+
+<p>open pelican and add the following line.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:::python
+THEME = "/home/user/pelican-themes/theme-name" # this should be path of downloaded theme.
+</code></pre></div></div>
+
+<h2 id="commenting">Commenting</h2>
+<p>The only thing that you will miss mostly is commenting in your posts. People can not comment in static sites. I don’t actually care about any comments on my posts. Most people use third party commenting system like <a href="https://disqus.com/">Disqus</a>. It works well with static sites. Another option is to use google+ comments.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/blog" class="page__taxonomy-item" rel="tag">blog</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/jekyll" class="page__taxonomy-item" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/pelican" class="page__taxonomy-item" rel="tag">pelican</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/publishing" class="page__taxonomy-item" rel="tag">publishing</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/static-site" class="page__taxonomy-item" rel="tag">static-site</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.thavanathan.com/categories/python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2015-01-30T10:20:00+05:30">January 30, 2015</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Static+Site+Generators%20https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fstatic-site-generators%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fstatic-site-generators%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fstatic-site-generators%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fstatic-site-generators%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://www.thavanathan.com/android/an-android-app/" class="pagination--pager" title="An Android app to search baby names
+">Previous</a>
+    
+    
+      <a href="https://www.thavanathan.com/python/crawling-web-pages-with-scrapy/" class="pagination--pager" title="Crawling web pages using Python and Scrapy - Tutorial
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <section id="static-comments">
+        
+          <!-- Start static comments -->
+          <div class="js-comments">
+            
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">Leave a Comment</h4>
+            <p class="small">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v2/entry/thavan/www.thavanathan.com/master/comments">
+              <div class="form__spinner">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">Comment <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">Markdown is supported.</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">Name <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">Email address <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">Website (optional)</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="static-site-generators">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                <input type="hidden" name="options[reCaptcha][siteKey]" value="">
+                <input type="hidden" name="options[reCaptcha][secret]" value="">
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              <div class="form-group">
+                <div class="g-recaptcha" data-sitekey=""></div>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">Submit Comment</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          
+        
+      </section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/understand-web-programming-with-python/" rel="permalink">Understanding web programming with Python 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number of web frameworks out there to easily ge...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/python-save-memory-usage-with-slots/" rel="permalink">Reduce memory usage in Python using slots
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a 
+lot objects with fixed number of attributes. For exa...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/python-list-comprehensions-and-generator-expressions/" rel="permalink">Python List Comprehensions and generator expressions
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of 
+redundant and repetitive code. It helps crea...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/crawling-web-pages-with-scrapy/" rel="permalink">Crawling web pages using Python and Scrapy - Tutorial
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this post, let us walk through how we can crawl web pages using Scrapy.
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+    
+    
+    
+    
+    
+    <li><a href="https://www.thavanathan.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Thavanathan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://www.thavanathan.com/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    (function ($) {
+    var $comments = $('.js-comments');
+
+    $('#new_comment').submit(function () {
+      var form = this;
+
+      $(form).addClass('disabled');
+      $('#comment-form-submit').html('<i class="fa fa-spinner fa-spin fa-fw"></i> Loading...');
+
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+          $('#comment-form-submit').html('Submitted');
+          $('.page__comments-form .js-notice').removeClass('notice--danger');
+          $('.page__comments-form .js-notice').addClass('notice--success');
+          showAlert('Thanks for your comment! It will show on the site once it has been approved.');
+        },
+        error: function (err) {
+          console.log(err);
+          $('#comment-form-submit').html('Submit Comment');
+          $('.page__comments-form .js-notice').removeClass('notice--success');
+          $('.page__comments-form .js-notice').addClass('notice--danger');
+          showAlert('Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again.');
+          $(form).removeClass('disabled');
+        }
+      });
+
+      return false;
+    });
+
+    function showAlert(message) {
+      $('.page__comments-form .js-notice').removeClass('hidden');
+      $('.page__comments-form .js-notice-text').html(message);
+    }
+  })(jQuery);
+  </script>
+
+  
+
+
+
+  </body>
+</html>

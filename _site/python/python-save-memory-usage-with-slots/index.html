@@ -1,0 +1,787 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.7.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Reduce memory usage in Python using slots  Thavanathan</title>
+
+
+
+
+<meta name="description" content="slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a lot objects with fixed number of attributes. For example let’s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,">
+
+
+
+
+<meta name="author" content="Thavanathan Thangaraj">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Thavanathan">
+<meta property="og:title" content="Reduce memory usage in Python using slots">
+
+
+  <link rel="canonical" href="https://www.thavanathan.com/python/python-save-memory-usage-with-slots/">
+  <meta property="og:url" content="https://www.thavanathan.com/python/python-save-memory-usage-with-slots/">
+
+
+
+  <meta property="og:description" content="slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a lot objects with fixed number of attributes. For example let’s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-04-11T14:30:00+05:30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://www.thavanathan.com/feed.xml" type="application/atom+xml" rel="alternate" title="Thavanathan Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.thavanathan.com/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://www.thavanathan.com/">Thavanathan</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://www.thavanathan.com/about/">About</a></li>
+          
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.thavanathan.com/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.thavanathan.com/categories/python" itemprop="item"><span itemprop="name">Python</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Reduce memory usage in Python using slots</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Thavanathan Thangaraj</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Full stack developer. Python, Django enthusiast and teacher
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        <li>
+          <a href="http://www.thavanathan.com" itemprop="url">
+            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/pythavan" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Reduce memory usage in Python using slots">
+    <meta itemprop="description" content="slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a lot objects with fixed number of attributes. For example let’s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,">
+    <meta itemprop="datePublished" content="April 11, 2017">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Reduce memory usage in Python using slots
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a 
+lot objects with fixed number of attributes. For example let’s assume we have a online shopping website. 
+whenever a user adds a item to the cart, we create a object for that item. For example,</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CartItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_id</span><span class="p">,</span> <span class="n">added_time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_item_id</span> <span class="o">=</span> <span class="n">item_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_added_time</span> <span class="o">=</span> <span class="n">added_time</span>
+</code></pre></div></div>
+
+<p>Let’s create an object for CartItem.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; i = CartItem(232322232, '2016-12-12 02:23') 
+&gt;&gt;&gt; i._added_time
+'2016-12-12 02:23'
+&gt;&gt;&gt; i.count = 3
+&gt;&gt;&gt; i.myvariable = 'hello'
+&gt;&gt;&gt; i.__dict__
+{'_added_time': '2016-12-12 02:23', 'count': 3, '_item_id': 232322232, 'myvariable': 'hello'}
+&gt;&gt;&gt; 
+</code></pre></div></div>
+
+<p>as we noticed, we are free to add any new property to our CartItem object, and object’s <code class="highlighter-rouge">__dict__</code> contains all 
+the properties of the class. Let’s say there are millions of Items floating around in all shopping carts.
+As python uses dictionary to store variables, each dictionary will have a hash table for faster lookups. This
+requires additional space. This space is insignificant when we have a minimum number of objects. But it can 
+consume a lot of space if the number of objects are relatively very high.</p>
+
+<p>There is a special class variable in Python called <code class="highlighter-rouge">__slots__</code>. Let’s update our CartItem class 
+to use <code class="highlighter-rouge">__slots__</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CartItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s">'_item_id'</span><span class="p">,</span> <span class="s">'_added_date'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_id</span><span class="p">,</span> <span class="n">added_time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_item_id</span> <span class="o">=</span> <span class="n">item_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_added_time</span> <span class="o">=</span> <span class="n">added_time</span>
+</code></pre></div></div>
+
+<p>Let’s play around with our new class</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; i = CartItem(232322232, '2016-12-12 02:23')
+&gt;&gt;&gt; i._added_time
+'2016-12-12 02:23'
+&gt;&gt;&gt; i._updated_time = '2016-12-12 02:23' # can't add new attributes
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AttributeError: 'CartItem' object has no attribute '_updated_time'
+&gt;&gt;&gt; i.__dict__ # there is not __dict__ when you use slots.
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AttributeError: 'CartItem' object has no attribute '__dict__'
+</code></pre></div></div>
+
+<p>Now the CartItem object is not allowing us create new attributes in the object unless they are specified 
+in <code class="highlighter-rouge">__slots__</code>. <code class="highlighter-rouge">__slots__</code> can be a string with name of a attribute or an iterable with list of strings 
+specifying attribute names. When we add <code class="highlighter-rouge">__slots__</code> to a class, Python will actually use tuple to store attributes instead of using a dictionary.
+In the above example we can clearly see that accessing <code class="highlighter-rouge">__dict__</code> of the object raised a exception. By using 
+tuple instead of a dictionary we save a little bit of memory in our object. This little memory adds up and
+become huge when there are huge number of objects in your application.</p>
+
+<p>Let’s try to measure our CartItem memory usage with and without <code class="highlighter-rouge">__slots__</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">resource</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">TOTAL_OBJECTS</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span>  <span class="c"># 10 millions</span>
+
+
+<span class="k">class</span> <span class="nc">CartItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""A simple shopping cart.
+    """</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s">'_item_id'</span><span class="p">,</span> <span class="s">'_added_time'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_id</span><span class="p">,</span> <span class="n">added_time</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_item_id</span> <span class="o">=</span> <span class="n">item_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_added_time</span> <span class="o">=</span> <span class="n">added_time</span>
+
+
+<span class="k">def</span> <span class="nf">get_usage</span><span class="p">():</span>
+    <span class="s">"""Finds the elapsed time and RAM usage of current process.
+    Creates 10 million objects of CartItem in a list for measurement.
+    :return: 
+    """</span>
+    <span class="n">initial_usage</span> <span class="o">=</span> <span class="n">resource</span><span class="o">.</span><span class="n">getrusage</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">RUSAGE_SELF</span><span class="p">)</span><span class="o">.</span><span class="n">ru_maxrss</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">CartItem</span><span class="p">(</span><span class="mi">232322232</span><span class="p">,</span> <span class="s">'2016-12-12 02:23'</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOTAL_OBJECTS</span><span class="p">)]</span>
+    <span class="n">final_usage</span> <span class="o">=</span> <span class="n">resource</span><span class="o">.</span><span class="n">getrusage</span><span class="p">(</span><span class="n">resource</span><span class="o">.</span><span class="n">RUSAGE_SELF</span><span class="p">)</span><span class="o">.</span><span class="n">ru_maxrss</span>
+    <span class="n">total_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+    <span class="n">total_usage</span> <span class="o">=</span> <span class="p">(</span><span class="n">final_usage</span> <span class="o">-</span> <span class="n">initial_usage</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Total Time: {:.2f} seconds"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_time</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Total memory usage: {:.2f} megabytes"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_usage</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">get_usage</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The output is</p>
+<pre><code class="language-commandline">$ python3 ram_usage.py
+Total Time: 8.82 seconds
+Total memory usage: 561.23 megabytes
+</code></pre>
+
+<p>If we run the same program after removing <code class="highlighter-rouge">__slots__</code> class variable,</p>
+
+<pre><code class="language-commandline">$ python3 ram_usage.py
+Total Time: 11.08 seconds
+Total memory usage: 1293.38 megabytes
+</code></pre>
+
+<p>Clearly, the space is reduced around 43% after using slots.</p>
+
+<h3 id="summary">Summary</h3>
+<ul>
+  <li>When there is a huge number of objects with fixed number of properties, using <code class="highlighter-rouge">__slots__</code> can be huge
+beneficial to reduce RAM usage.</li>
+  <li><code class="highlighter-rouge">__slots__</code> should be declared in every class. If your parent class has defined <code class="highlighter-rouge">__slots__</code>, child class
+will ignore it.</li>
+  <li><code class="highlighter-rouge">__slots__</code> prohibits creating new attributes to objects unless they are specified in <strong>slots</strong>. This 
+side effect cannot be misused to protect your objects from creating new properties.</li>
+  <li>All the attributes are stored in tuple instead of object’s <code class="highlighter-rouge">__dict__</code> to save space.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/memory" class="page__taxonomy-item" rel="tag">memory</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.thavanathan.com/tags/python-slots" class="page__taxonomy-item" rel="tag">python-slots</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.thavanathan.com/categories/python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-04-11T14:30:00+05:30">April 11, 2017</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Reduce+memory+usage+in+Python+using+slots%20https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fpython-save-memory-usage-with-slots%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fpython-save-memory-usage-with-slots%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fpython-save-memory-usage-with-slots%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thavanathan.com%2Fpython%2Fpython-save-memory-usage-with-slots%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://www.thavanathan.com/python/python-list-comprehensions-and-generator-expressions/" class="pagination--pager" title="Python List Comprehensions and generator expressions
+">Previous</a>
+    
+    
+      <a href="https://www.thavanathan.com/python/understand-web-programming-with-python/" class="pagination--pager" title="Understanding web programming with Python 1
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <section id="static-comments">
+        
+          <!-- Start static comments -->
+          <div class="js-comments">
+            
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">Leave a Comment</h4>
+            <p class="small">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v2/entry/thavan/www.thavanathan.com/master/comments">
+              <div class="form__spinner">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">Comment <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">Markdown is supported.</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">Name <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">Email address <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">Website (optional)</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="python-save-memory-usage-with-slots">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                <input type="hidden" name="options[reCaptcha][siteKey]" value="">
+                <input type="hidden" name="options[reCaptcha][secret]" value="">
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              <div class="form-group">
+                <div class="g-recaptcha" data-sitekey=""></div>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">Submit Comment</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          
+        
+      </section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/understand-web-programming-with-python/" rel="permalink">Understanding web programming with Python 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number of web frameworks out there to easily ge...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/python-list-comprehensions-and-generator-expressions/" rel="permalink">Python List Comprehensions and generator expressions
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of 
+redundant and repetitive code. It helps crea...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/crawling-web-pages-with-scrapy/" rel="permalink">Crawling web pages using Python and Scrapy - Tutorial
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this post, let us walk through how we can crawl web pages using Scrapy.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.thavanathan.com/python/static-site-generators/" rel="permalink">Static Site Generators
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authenticati...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+    
+    
+    
+    
+    
+    <li><a href="https://www.thavanathan.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Thavanathan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://www.thavanathan.com/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    (function ($) {
+    var $comments = $('.js-comments');
+
+    $('#new_comment').submit(function () {
+      var form = this;
+
+      $(form).addClass('disabled');
+      $('#comment-form-submit').html('<i class="fa fa-spinner fa-spin fa-fw"></i> Loading...');
+
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+          $('#comment-form-submit').html('Submitted');
+          $('.page__comments-form .js-notice').removeClass('notice--danger');
+          $('.page__comments-form .js-notice').addClass('notice--success');
+          showAlert('Thanks for your comment! It will show on the site once it has been approved.');
+        },
+        error: function (err) {
+          console.log(err);
+          $('#comment-form-submit').html('Submit Comment');
+          $('.page__comments-form .js-notice').removeClass('notice--success');
+          $('.page__comments-form .js-notice').addClass('notice--danger');
+          showAlert('Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again.');
+          $(form).removeClass('disabled');
+        }
+      });
+
+      return false;
+    });
+
+    function showAlert(message) {
+      $('.page__comments-form .js-notice').removeClass('hidden');
+      $('.page__comments-form .js-notice-text').html(message);
+    }
+  })(jQuery);
+  </script>
+
+  
+
+
+
+  </body>
+</html>

@@ -1,8 +1,13 @@
 ---
 title: Crawling web pages using Python and Scrapy - Tutorial
 date: 2015-06-02 09:00:00
-categories: crawl, python, scrapy
+categories: 
+    - Python
+tags:
+    - crawling
+    - scrapy
 ---
+
 In this post, let us walk through how we can crawl web pages using [Scrapy][2].
 
 For this tutorial, we will download all the excerpts and ebooks available in https://www.goodreads.com/ebooks?sort=popular_books. This page is paginated. Let's download books from first page only. At the end of this post, you will know how to follow and crawl other pages too.

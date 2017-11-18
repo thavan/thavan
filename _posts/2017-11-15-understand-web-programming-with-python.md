@@ -8,6 +8,8 @@ tags:
   - python
   - cgi
   - apache
+toc:
+  - true
 ---
 
 Web programming or web development is an art of developing web sites. It's a broader term. There are numerous number of web frameworks out there to easily getting start with. But, it's essential to understand the basics before diving into any one of those frameworks. Through these series of posts, we are going study fundamentals of web programming and explore advanced concepts and frameworks later. I use python here because I seems to be knowing it and I prefer it more than other languages when it comes to teaching.

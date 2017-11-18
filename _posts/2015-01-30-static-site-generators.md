@@ -1,8 +1,16 @@
 ---
 title: Static Site Generators
-Date: 2015-01-30 10:20
-categories: python, pelican, publishing, blog, jekyll, static-site
+date: 2015-01-30 10:20
+categories:
+  - Python
+tags: 
+  - pelican
+  - publishing
+  - blog
+  - jekyll
+  - static-site
 ---
+
 Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.
 
 How static site generators work?
