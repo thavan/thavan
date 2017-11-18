@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Crawling web pages using Python and Scrapy - Tutorial
 date: 2015-06-02 09:00:00
 categories: crawl, python, scrapy

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Python List Comprehensions and generator expressions
 date: 2017-03-19 09:00:00
 categories: python

@@ -1,86 +1,347 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.7.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
 
-  <title>Python List Comprehensions and generator expressions</title>
-  <meta name="description" content="Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and repetitive code. It helps creat...">
+<!-- begin SEO -->
 
-  <link rel="stylesheet" href="/assets/main.css">
+
+
+
+
+
+
+
+
+<title>Python List Comprehensions and generator expressions  Thavanathan</title>
+
+
+
+
+<meta name="description" content="Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and repetitive code. It helps creating lists, dictionaries and generators from other iterable objects with a single statement.">
+
+
+
+
+<meta name="author" content="Thavanathan Thangaraj">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Thavanathan">
+<meta property="og:title" content="Python List Comprehensions and generator expressions">
+
+
   <link rel="canonical" href="http://localhost:4000/python/2017/03/19/python-list-comprehensions-and-generator-expressions.html">
-  <link rel="alternate" type="application/rss+xml" title="Thavanathan" href="/feed.xml">
-  
-  
-</head>
+  <meta property="og:url" content="http://localhost:4000/python/2017/03/19/python-list-comprehensions-and-generator-expressions.html">
 
 
-  <body>
 
-    <header class="site-header" role="banner">
+  <meta property="og:description" content="Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and repetitive code. It helps creating lists, dictionaries and generators from other iterable objects with a single statement.">
 
-  <div class="wrapper">
-    
-    
-    <a class="site-title" href="/">Thavanathan</a>
-  
-    
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
 
-        <div class="trigger">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-03-19T14:30:00+05:30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Thavanathan Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="http://localhost:4000/">Thavanathan</a>
+        <ul class="visible-links">
           
             
-            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/about/">About</a></li>
           
-            
-            
-            <a class="page-link" href="/about/">About</a>
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-        </div>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
       </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/categories/#python" itemprop="item"><span itemprop="name">Python</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/categories/#2017" itemprop="item"><span itemprop="name">2017</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/categories/#03" itemprop="item"><span itemprop="name">03</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="http://localhost:4000/categories/#19" itemprop="item"><span itemprop="name">19</span></a>
+          <meta itemprop="position" content="5" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Python List Comprehensions and generator expressions</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Thavanathan Thangaraj</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Full stack developer. Python, Django enthusiast and teacher
+      </p>
     
   </div>
-</header>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        <li>
+          <a href="http://www.thavanathan.com" itemprop="url">
+            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/pythavan" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
 
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Python List Comprehensions and generator expressions">
+    <meta itemprop="description" content="Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of redundant and repetitive code. It helps creating lists, dictionaries and generators from other iterable objects with a single statement.">
+    <meta itemprop="datePublished" content="March 19, 2017">
+    
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Python List Comprehensions and generator expressions</h1>
-    <p class="post-meta">
-      <time datetime="2017-03-19T14:30:00+05:30" itemprop="datePublished">
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Python List Comprehensions and generator expressions
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
         
-        Mar 19, 2017
-      </time>
-      </p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <p>Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of 
+        <p>Comprehensions are one of the prominent features of Python. Once you understand them, it helps avoiding lots of 
 redundant and repetitive code. It helps creating lists, dictionaries and generators from other iterable objects 
 with a single statement.</p>
 
@@ -88,70 +349,62 @@ with a single statement.</p>
 
 <p>Let’s take the below tuple as an example,</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Science'</span><span class="p">,</span> <span class="mi">85</span><span class="p">),</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Phisics'</span><span class="p">,</span> <span class="mi">65</span><span class="p">),</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Mathematics'</span><span class="p">,</span> <span class="mi">89</span><span class="p">),</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Computer Science'</span><span class="p">,</span> <span class="mi">34</span><span class="p">)</span>
 <span class="o">...</span> <span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To get all the subjects from this tuple,</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
 <span class="p">[</span><span class="s">'Science'</span><span class="p">,</span> <span class="s">'Phisics'</span><span class="p">,</span> <span class="s">'Mathematics'</span><span class="p">,</span> <span class="s">'Computer Science'</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The above statement with square bracket is called list comprehensions. It creates a new list from an iterable object. 
 To get all the subjects in which the student scored more than 80, you could write</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">subject</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">subject</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span>
 <span class="p">[</span><span class="s">'Science'</span><span class="p">,</span> <span class="s">'Mathematics'</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you want to create a list with all the scores, but if the score is less the 70 you want to make them 70</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span><span class="p">)</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span><span class="p">)</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]</span>
 <span class="p">[(</span><span class="s">'Science'</span><span class="p">,</span> <span class="mi">85</span><span class="p">),</span> <span class="p">(</span><span class="s">'Phisics'</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">'Mathematics'</span><span class="p">,</span> <span class="mi">89</span><span class="p">),</span> <span class="p">(</span><span class="s">'Computer Science'</span><span class="p">,</span> <span class="mi">70</span><span class="p">)]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="set-comprehensions">Set comprehensions</h3>
 
 <p>To get a set instead of a list, just put curly braces instead of square brackets</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">{(</span><span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span><span class="p">)</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">{(</span><span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span><span class="p">)</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">g</span>
 <span class="p">{(</span><span class="s">'Computer Science'</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">'Science'</span><span class="p">,</span> <span class="mi">85</span><span class="p">),</span> <span class="p">(</span><span class="s">'Phisics'</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">'Mathematics'</span><span class="p">,</span> <span class="mi">89</span><span class="p">)}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">set</span><span class="s">'&gt;</span><span class="err">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>One more advantage of set is that you get duplicates removed automatically.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">]</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">]</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'train'</span><span class="p">,</span> <span class="s">'car'</span><span class="p">,</span> <span class="s">'bus'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">}</span>
 <span class="p">{</span><span class="s">'bus'</span><span class="p">,</span> <span class="s">'car'</span><span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="dict-comprehensions">Dict comprehensions</h3>
 
 <p>To get all the items a dictionary if score is more than 70,</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">subject</span><span class="p">:</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">subject</span><span class="p">:</span> <span class="n">score</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span><span class="mi">70</span> <span class="k">else</span> <span class="mi">70</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">}</span>
 <span class="p">{</span><span class="s">'Science'</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span> <span class="s">'Phisics'</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="s">'Mathematics'</span><span class="p">:</span> <span class="mi">89</span><span class="p">,</span> <span class="s">'Computer Science'</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Note that, you should put a semicolon between key and value. Also the entire expression should be enclosed by curly braces. 
 The colon is the one that decides if the output is going to a set or a dictionary.</p>
@@ -160,7 +413,7 @@ The colon is the one that decides if the output is going to a set or a dictionar
 
 <p>To create a generator, just put a round brackets around the expression.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Science'</span><span class="p">,</span> <span class="mi">85</span><span class="p">),</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Phisics'</span><span class="p">,</span> <span class="mi">65</span><span class="p">),</span>
 <span class="o">...</span>     <span class="p">(</span><span class="s">'Mathematics'</span><span class="p">,</span> <span class="mi">89</span><span class="p">),</span>
@@ -169,8 +422,7 @@ The colon is the one that decides if the output is going to a set or a dictionar
 <span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">((</span><span class="n">subject</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">g</span>
 <span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">genexpr</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mh">0x1014a8360</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Why do we need a generator anyway if we can get a list? To answer that, let’s see how a list works. While creating 
 a list every item in the list is loaded before you use them. You can iterate through it, you can slice it, 
@@ -181,7 +433,7 @@ Only one value is generated at a time. In fact you may not even know the length 
 one at a time, but you cannot access it’s elements by indexing. You cannot slice it. Once you consumed it, it’s over. 
 You cannot re-iterate through it again. In the above example,</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
 <span class="o">...</span> 
 <span class="p">(</span><span class="s">'Science'</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>
@@ -192,14 +444,13 @@ You cannot re-iterate through it again. In the above example,</p>
 <span class="o">...</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
 <span class="o">...</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In second iteration you won’t get anything from the generator as you already consumed it and you reached the end of it.</p>
 
 <p>A practical example of generator would be, assume you have 10 giga bytes log file. You want to process it line by line.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s">'debug.log'</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'error:'</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">errors</span> <span class="o">=</span> <span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s">'debug.log'</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'error:'</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">errors</span><span class="p">:</span>
 <span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 <span class="o">...</span> 
@@ -208,8 +459,7 @@ You cannot re-iterate through it again. In the above example,</p>
 <span class="n">error</span><span class="p">:</span> <span class="nb">ValueError</span>
 
 <span class="n">error</span><span class="p">:</span> <span class="nb">IOError</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All the lines starting with <code class="highlighter-rouge">"error:"</code> printed in the above loop.</p>
 
@@ -217,65 +467,329 @@ You cannot re-iterate through it again. In the above example,</p>
 all the log file items in to a list and system can go out of memory if the file is too big in size.</p>
 
 
-  </div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
 
   
-</article>
 
-      </div>
-    </main>
 
-    <footer class="site-footer">
+  
+  
+  
 
-  <div class="wrapper">
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#python" class="page__taxonomy-item" rel="tag">python</a>
+    
+    </span>
+  </p>
 
-    <h2 class="footer-heading">Thavanathan</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            
-              Thavanathan
-            
-            </li>
-            
-            <li><a href="mailto:thavanathan.t@gmail.com">thavanathan.t@gmail.com</a></li>
-            
-        </ul>
-      </div>
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-03-19T14:30:00+05:30">March 19, 2017</time></p>
+        
+      </footer>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/jekyll"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">jekyll</span></a>
+      <section class="page__share">
+  
 
-          </li>
-          
+  <a href="https://twitter.com/intent/tweet?text=Python+List+Comprehensions+and+generator+expressions%20http%3A%2F%2Flocalhost%3A4000%2Fpython%2F2017%2F03%2F19%2Fpython-list-comprehensions-and-generator-expressions.html" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-          
-          <li>
-            <a href="https://twitter.com/jekyllrb"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</span><span class="username">jekyllrb</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpython%2F2017%2F03%2F19%2Fpython-list-comprehensions-and-generator-expressions.html" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-          </li>
-          
-        </ul>
-      </div>
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2F2017%2F03%2F19%2Fpython-list-comprehensions-and-generator-expressions.html" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</p>
-      </div>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fpython%2F2017%2F03%2F19%2Fpython-list-comprehensions-and-generator-expressions.html" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/crawl,/python,/scrapy/2015/06/02/crawling-web-pages-with-scrapy.html" class="pagination--pager" title="Crawling web pages using Python and Scrapy - Tutorial
+">Previous</a>
+    
+    
+      <a href="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html" class="pagination--pager" title="Reduce memory usage in Python using slots
+">Next</a>
+    
+  </nav>
+
     </div>
 
-  </div>
+    
+      <div class="page__comments">
+  
+  
+      <section id="static-comments">
+        
+          <!-- Start static comments -->
+          <div class="js-comments">
+            
+          </div>
+          <!-- End static comments -->
 
-</footer>
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">Leave a Comment</h4>
+            <p class="small">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v2/entry/thavan/www.thavanathan.com/master/comments">
+              <div class="form__spinner">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">Comment <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">Markdown is supported.</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">Name <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">Email address <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">Website (optional)</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="python-list-comprehensions-and-generator-expressions">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                <input type="hidden" name="options[reCaptcha][siteKey]" value="">
+                <input type="hidden" name="options[reCaptcha][secret]" value="">
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              <div class="form-group">
+                <div class="g-recaptcha" data-sitekey=""></div>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">Submit Comment</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          
+        
+      </section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/python/understand-web-programming-with-python/" rel="permalink">Understanding web programming with Python 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Web programming or web development is an art of developing web sites. It’s a broader term. There are numerous number of web frameworks out there to easily ge...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/python/2017/04/11/python-save-memory-usage-with-slots.html" rel="permalink">Reduce memory usage in Python using slots
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">slots is a kind of Python magic that reduces memory usage of a program. It’s useful only when we have a 
+lot objects with fixed number of attributes. For exa...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/crawl,/python,/scrapy/2015/06/02/crawling-web-pages-with-scrapy.html" rel="permalink">Crawling web pages using Python and Scrapy - Tutorial
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this post, let us walk through how we can crawl web pages using Scrapy.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/python,/pelican,/publishing,/blog,/jekyll,/static-site/2015/01/30/static-site-generators.html" rel="permalink">Static Site Generators
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authenticati...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+    
+    
+    
+    
+    
+    <li><a href="http://localhost:4000/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Thavanathan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    (function ($) {
+    var $comments = $('.js-comments');
+
+    $('#new_comment').submit(function () {
+      var form = this;
+
+      $(form).addClass('disabled');
+      $('#comment-form-submit').html('<i class="fa fa-spinner fa-spin fa-fw"></i> Loading...');
+
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+          $('#comment-form-submit').html('Submitted');
+          $('.page__comments-form .js-notice').removeClass('notice--danger');
+          $('.page__comments-form .js-notice').addClass('notice--success');
+          showAlert('Thanks for your comment! It will show on the site once it has been approved.');
+        },
+        error: function (err) {
+          console.log(err);
+          $('#comment-form-submit').html('Submit Comment');
+          $('.page__comments-form .js-notice').removeClass('notice--success');
+          $('.page__comments-form .js-notice').addClass('notice--danger');
+          showAlert('Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again.');
+          $(form).removeClass('disabled');
+        }
+      });
+
+      return false;
+    });
+
+    function showAlert(message) {
+      $('.page__comments-form .js-notice').removeClass('hidden');
+      $('.page__comments-form .js-notice-text').html(message);
+    }
+  })(jQuery);
+  </script>
+
+  
+
 
 
   </body>
-
 </html>

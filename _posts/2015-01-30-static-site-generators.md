@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Static Site Generators
 Date: 2015-01-30 10:20
 categories: python, pelican, publishing, blog, jekyll, static-site

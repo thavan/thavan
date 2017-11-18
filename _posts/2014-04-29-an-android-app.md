@@ -1,5 +1,4 @@
 ---
-layout: post
 title: An Android app to search baby names
 date: 2014-04-29 14:25:00
 categories: android 

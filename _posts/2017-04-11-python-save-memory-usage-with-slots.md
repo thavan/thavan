@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reduce memory usage in Python using slots
 date: 2017-04-11 09:00:00
 categories: python
