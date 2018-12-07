@@ -1,5 +1,5 @@
 ---
-title: Web programming with Python - Part 2 - CGI
+title: Web programming with Python - Part 3 - CGI
 date: 2018-01-18 05:00:00
 updated: 2018-01-18 05:00:00
 permalink: /:categories/:title/
@@ -11,7 +11,7 @@ tags:
   - apache
 ---
 
-If you have read the [previous post](/python/web-programming-with-python-1-web-servers/), we stopped after introducing web servers. In this post, we write very simple web application using cgi programming. 
+If you read the previous post, we stopped after introducing web servers. In this post, we write very simple web application using cgi programming. 
 
 CGI stands for Common Gateway Interface. Let's say we received a web request, and we want to process that request with Python. CGI is basically a script that is run by the web server whenever a request is received. The script can be a Python script or a Shell script or Ruby script. Let's create a Python cgi script to process our request.
 
@@ -47,6 +47,4 @@ This line will already be there. Just make sure it's not commented out. Let's al
 sudo httpd -k start
 ```
 
-Starting apache command varies with different operating systems, so look for online documentation about how to start your Apache server. We can now head to `http://localhost/cgi-bin/hello.py` and see our first web application like the one below.
-
-![CGI-Apache](/assets/cgi_http.png)
+Starting apache command differs for different operating systems, so look for online documentation about how to start your Apache server. We can now head to `http://localhost/cgi-bin/hello.py` and see our first web application.

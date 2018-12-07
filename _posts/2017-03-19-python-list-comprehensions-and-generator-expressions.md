@@ -15,12 +15,12 @@ Let's take the below tuple as an example,
 
 
 ```python
->>> scores = (
-...     ('Science', 85),
-...     ('Phisics', 65),
-...     ('Mathematics', 89),
-...     ('Computer Science', 34)
-... )
+scores = (
+    ('Science', 85),
+    ('Phisics', 65),
+    ('Mathematics', 89),
+    ('Computer Science', 34)
+)
 ```
 
 To get all the subjects from this tuple,
