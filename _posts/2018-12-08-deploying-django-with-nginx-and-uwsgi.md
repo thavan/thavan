@@ -3,6 +3,7 @@ title: Deploying Django Application with Nginx and uwsgi
 date: 2018-11-06 05:00:00
 updated: 2018-11-06 05:00:00
 permalink: /:categories/:title/
+comments: true
 categories:
   - Python
 tags:

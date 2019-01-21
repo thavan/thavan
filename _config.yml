@@ -27,10 +27,15 @@ github_username:  jekyll
 repository                : "thavan/www.thavanathan.com"
 # Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
 #theme: minima
 theme: minimal-mistakes-jekyll
 words_per_minute         : 100
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 highlighter: rouge
 comments:
   provider               : "staticman_v2"
@@ -86,14 +91,12 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
   # _posts
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true
       read_time: true
       comments: true
       share: true
