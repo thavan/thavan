@@ -6,15 +6,15 @@ permalink: /:categories/:title/
 comments: true
 categories:
   - Python
+  - Django
 tags:
   - python
   - django
-  - nginx
 toc:
   - true
 ---
 ## Introduction
-Python's CGI library is good enough for writing websites from the ground. But we need to put a lot of effort into it 
+Python's CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it 
 to build a usable and secure website. When building a web application we often come across some common tasks like
 authenticating users, connecting to a database, sending emails to users, a reliable admin interface to manage and add 
 content to our site, etc. If we solve all of these problems ourselves, it is time-consuming. That's were Django comes 
@@ -41,7 +41,7 @@ mkvirtualenv djbook --python=python3
 pip install django
 ```
 **Tip:** In the above commands I have used `mkvirtualenv` command to create a new virtual environment. It comes with the Python 
-package [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/). It is a very convenient tool to create 
+package called [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/). It is a very convenient tool to create 
 and mange Python virtual environments. Take a look at it if you are interested.
 {: .notice--success}
 
@@ -62,7 +62,7 @@ cd mysite
 ```
 
 In the mysite directory, you will see the following file structure. Don't worry about what to do with these files now.
-We will learn this in later chapters.
+We will learn this in upcoming posts.
 ```bash
 mysite
 ├── manage.py
