@@ -33,7 +33,7 @@ kramdown:
   syntax_highlighter: rouge
   
 #theme: minima
-theme: minimal-mistakes-jekyll
+theme: jekyll-theme-minimal
 words_per_minute         : 100
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 highlighter: rouge
