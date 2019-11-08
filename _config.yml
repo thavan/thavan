@@ -13,54 +13,28 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Thavanathan
-email: thavanathan.t@gmail.com
-name : "Thavanathan"
+title: MM
+email:
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.thavanathan.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-repository                : "thavan/www.thavanathan.com"
+twitter_username: username
+github_username: username
+minimal_mistakes_skin: default
+search: true
+
 # Build settings
 markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  
-#theme: minima
-theme: jekyll-theme-minimal
-words_per_minute         : 100
-minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-highlighter: rouge
-comments:
-  provider               : "staticman_v2"
-staticman:
-  branch    : "master"
-plugins:
-  - jekyll-feed
-
-category_archive:
-  type: jekyll-archives
-  path: /categories/
-tag_archive:
-  type: jekyll-archives
-  path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-    - year
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+include:
+  - _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -74,37 +48,62 @@ jekyll-archives:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
 author:
-  name   : "Thavanathan Thangaraj"
-  avatar : "/assets/thavan-rise.jpg"
+  name   : "First Lastname"
+  avatar : "/assets/images/bio-photo.jpg"
   bio    : "Full stack developer. Python, Django enthusiast and teacher"
-  email  : # optional
-  uri    : "http://www.thavanathan.com"
-  twitter: thavan33
-  location : "Chennai"
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.thavanathan.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/thavan"
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
 
 defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
   # _posts
   - scope:
       path: ""
       type: posts
     values:
       layout: single
+      author_profile: true
       read_time: true
       comments: true
       share: true
       related: true
-      permalink: /:categories/:title/
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-
-include: ["_pages"]
-
-breadcrumbs: true  # disabled by default
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
