@@ -43,7 +43,6 @@ staticman:
   branch    : "master"
 plugins:
   - jekyll-feed
-  - jekyll-archives
 
 category_archive:
   type: jekyll-archives
