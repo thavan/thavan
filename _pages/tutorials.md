@@ -1,5 +1,5 @@
 ---
-title: Python for Beginners
+title: Tutorials
 permalink: /tutorials/
 ---
 
@@ -21,6 +21,5 @@ to introduce all necessary topics.
 * [Web servers and clients]({% post_url django_beginner_tutorial/2017-11-15-web-servers-and-clients %})
 * [CGI Part II]({% post_url django_beginner_tutorial/2018-01-18-cgi %})
 * [Django Introduction]({% post_url django_beginner_tutorial/2019-11-07-django-introduction %})
-* [Django Blog App]({% post_url django_beginner_tutorial/2019-11-12-blog-app %})
 * ...
 * ...
