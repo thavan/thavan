@@ -1,6 +1,13 @@
 ---
-title: Introduction
-permalink: /books/python-for-beginners/introduction/
+title: Python Introduction
+date: 2019-11-14 05:00:00
+updated: 2019-11-14 09:00:00
+categories:
+  - Python-Beginner-Tutorial
+tags:
+  - python
+toc:
+  - true
 ---
 ### Introduction
 

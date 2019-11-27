@@ -1,6 +1,13 @@
 ---
-title: Getting started
-permalink: /books/python-for-beginners/getting-started/
+title: Getting started with interpreter
+date: 2019-11-20 05:00:00
+updated: 2019-11-20 09:00:00
+categories:
+  - Python-Beginner-Tutorial
+tags:
+  - python
+toc:
+  - true
 ---
 
 ## 3.1 Python Interactive Interpreter

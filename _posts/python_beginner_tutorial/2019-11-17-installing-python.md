@@ -1,6 +1,13 @@
 ---
 title: Installing Python
-permalink: /books/python-for-beginners/installing-python/
+date: 2019-11-17 05:00:00
+updated: 2019-11-17 09:00:00
+categories:
+  - Python-Beginner-Tutorial
+tags:
+  - python
+toc:
+  - true
 ---
 
 # Introduction
