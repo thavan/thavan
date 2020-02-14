@@ -1,9 +1,0 @@
-*.pyc
-output/
-cache/
-.sass-cache/
-_site/
-vendor
-.DS_Store
-.idea
-Gemfile.lock
