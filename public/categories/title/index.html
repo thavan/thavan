@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Web Servers and clients - Thavanathan</title>
+  <meta property="og:title" content="Web Servers and clients - Thavanathan" />
+  <meta name="twitter:title" content="Web Servers and clients - Thavanathan" />
+  <meta name="description" content="Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.">
+  <meta property="og:description" content="Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.">
+  <meta name="twitter:description" content="Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="Thavanathan" />
+  <meta property="og:url" content="http://example.org/categories/title/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Thavanathan</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-"><a href="/" title="Home">Home</a></li>
+      <li class="site-navi-item-"><a href="/posts/" title="Posts">Posts</a></li>
+      <li class="site-navi-item-"><a href="/pages/tutorials/" title="Tutorials">Tutorials</a></li>
+      <li class="site-navi-item-"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Web Servers and clients</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>November 15, 2017</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/django-beginner-tutorial/">
+            <i class="fas fa-folder"></i>
+            Django-Beginner-Tutorial
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/python/">
+            <i class="fas fa-tag"></i>
+            python
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/cgi/">
+            <i class="fas fa-tag"></i>
+            cgi
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/apache/">
+            <i class="fas fa-tag"></i>
+            apache
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#web-server">Web Server</a>
+      <ul>
+        <li><a href="#static-pages">Static pages</a></li>
+        <li><a href="#dynamic-pages">Dynamic pages</a></li>
+        <li><a href="#application-servers">Application servers</a></li>
+        <li><a href="#summary">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+      <h2 id="introduction">Introduction</h2>
+<p>Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.</p>
+<ol>
+<li>Front end development.</li>
+<li>Back end development.</li>
+</ol>
+<p>Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.</p>
+<p>There are numerous web frameworks out there you can easily pick and getting started with web development. But, I think, it&rsquo;s essential to understand the basics before diving into any one of those frameworks. Through these series of posts, we are going study fundamentals of web programming and explore advanced concepts and frameworks later. As the title is of this post says, everything is explained using Python.</p>
+<h2 id="web-server">Web Server</h2>
+<p>Let&rsquo;s start with a web server. Web server is a program that simply delivers web pages. For example when you type <a href="http://www.example.com">www.example.com</a> in your browser, a web server is what gives you that page.</p>
+<h3 id="static-pages">Static pages</h3>
+<p>Either web pages are already stored in the server or generated dynamically based on requested content. For example if you request this blog post, it is a very simple html page that is already stored on the server. Server program just needs to fetch and return it to your browser. Server programs are simply called servers. So if I say apache server, it means Apache server program. Do not confuse it with physical servers. Nginx, Apache and Internet Information Server(Windows) are the most popular web servers available today.</p>
+<h3 id="dynamic-pages">Dynamic pages</h3>
+<p>But unfortunately this is not enough mechanism for Facebook to work. Let&rsquo;s say you request a page in Facebook <a href="">http://www.facebook.com/friends/</a>. When you request, Facebook needs check if you are logged in and it needs all of your friends information from a database and creates a page with all of these information. This is called dynamic web pages.</p>
+<h3 id="application-servers">Application servers</h3>
+<p>When it comes to dynamic web pages, a web server cannot do all the above mentioned tasks. Web server&rsquo;s job is to essentially handle incoming requests very effectively and return the response. But building a dynamic web page is not it&rsquo;s task. It is more of a business logic that needs to handled by a programming language. That is where application servers comes into play.</p>
+<p>Application servers on the other hand, are designed to process your requests with specific programming language. For example a Tomcat server is a Java application server. uwsgi is a Python application application server. These application servers understand languages like Python or Java.</p>
+<h3 id="summary">Summary</h3>
+<p>We looked into three main components if web development,</p>
+<pre><code>1. Web server: only serves pages - forwards requests to application server
+2. Application server. - process requests and generates response.
+3. A programming language. - used by application server.
+</code></pre>
+
+    </article>
+
+    
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer">
+          <a href="/categories/title/" data-toggle="tooltip" data-placement="top" title="CGI Programming with Python">&lt; Newer</a>
+      </li>
+      <li class="pager-older pager-noitem">Older &gt;</li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright"></div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Thavanathan</title>
+    <link>http://example.org/categories/django/</link>
+    <description>Recent content in Django on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2019 05:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web programming with Python - Django Introduction</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Python&amp;rsquo;s CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it to build a usable and secure website. When building a web application we often come across some common tasks like authenticating users, connecting to a database, sending emails to users, a reliable admin interface to manage and add content to our site, etc. If we solve all of these problems ourselves, it is time-consuming.</description>
+    </item>
+    
+  </channel>
+</rss>

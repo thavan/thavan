@@ -10,7 +10,6 @@ title: Web Servers and clients
 toc:
 - true
 updated: "2017-11-19 09:00:00"
-url: /:categories/:title/
 ---
 
 ## Introduction

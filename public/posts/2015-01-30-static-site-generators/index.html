@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Static Site Generators - Thavanathan</title>
+  <meta property="og:title" content="Static Site Generators - Thavanathan" />
+  <meta name="twitter:title" content="Static Site Generators - Thavanathan" />
+  <meta name="description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.
+How static site generators work?
+ Write your posts in markdown or rst. Run the static site generator to parse these posts into html. Upload the generated output to any server that serves html (or even host it in github pages).">
+  <meta property="og:description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.
+How static site generators work?
+ Write your posts in markdown or rst. Run the static site generator to parse these posts into html. Upload the generated output to any server that serves html (or even host it in github pages).">
+  <meta name="twitter:description" content="Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="Thavanathan" />
+  <meta property="og:url" content="http://example.org/posts/2015-01-30-static-site-generators/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Thavanathan</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-"><a href="/" title="Home">Home</a></li>
+      <li class="site-navi-item-"><a href="/posts/" title="Posts">Posts</a></li>
+      <li class="site-navi-item-"><a href="/pages/tutorials/" title="Tutorials">Tutorials</a></li>
+      <li class="site-navi-item-"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Static Site Generators</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>January 30, 2015</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/python/">
+            <i class="fas fa-folder"></i>
+            Python
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/pelican/">
+            <i class="fas fa-tag"></i>
+            pelican
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/publishing/">
+            <i class="fas fa-tag"></i>
+            publishing
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/blog/">
+            <i class="fas fa-tag"></i>
+            blog
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/jekyll/">
+            <i class="fas fa-tag"></i>
+            jekyll
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/static-site/">
+            <i class="fas fa-tag"></i>
+            static-site
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#publishing">Publishing</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#migrating-from-other-blogging-platforms">Migrating from other blogging platforms</a></li>
+    <li><a href="#pelican-themes">Pelican Themes</a></li>
+    <li><a href="#commenting">Commenting</a></li>
+  </ul>
+</nav>
+</aside>
+      <p>Static site generators are tools that generates static sites i.e. pure html websites without backend data processing, session management or user authentication system. It should be well enough for running a blog.</p>
+<p>How static site generators work?</p>
+<ul>
+<li>Write your posts in <code>markdown</code> or <code>rst</code>.</li>
+<li>Run the static site generator to parse these posts into html.</li>
+<li>Upload the generated output to any server that serves html (or even host it in github pages).</li>
+</ul>
+<p>There are two main static site generators available today.</p>
+<ul>
+<li><a href="http://jekyllrb.com/">Jekyll</a> - A static site generator written in Ruby.</li>
+<li><a href="http://docs.getpelican.com/">Pelican</a> - A static site generator written in Python.</li>
+</ul>
+<p>For me, both has their own pros and cons. It&rsquo;s up to you to choose any one of them. Both Pelican and Jekyll can be hosted in github pages.</p>
+<h1 id="jekyll">Jekyll</h1>
+<p>Lets install Jekyll.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.4.tar.gz
+tar -zxvf ruby-2.1.4.tar.gz
+<span style="color:#8be9fd;font-style:italic">cd</span> ruby-2.1.4/
+./configure
+make
+sudo make install
+wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.2.tgz
+tar -zxvf rubygems-2.4.2.tgz
+<span style="color:#8be9fd;font-style:italic">cd</span> rubygems-2.4.2/
+
+apt-get install rubygems
+gem install jekyll <span style="color:#6272a4"># wait here. this step will take little bit longer without any indication.</span></code></pre></div>
+<p>Now type <code>jekyll new</code> to configure a new jekyll site.</p>
+<p>Jekyll creates following three main folders.</p>
+<ul>
+<li><code>_drafts</code>: Place all drafts here. Once they are complete, move them to <code>_posts</code> directory.</li>
+<li><code>_posts</code>: Place all published and ready to publish posts here.</li>
+<li><code>_site</code>: jekyll will generate the site in this directory. This can be hosted to your webserver.</li>
+</ul>
+<p>I&rsquo;m not going to explain how to write posts in markdown format. This post written in markdown format. Source can be found <a href="https://raw.githubusercontent.com/thavan/site/master/content/static-site-generators.md">here</a>.
+Run <code>jekyll build</code> to build the posts and <code>jekyll serve</code> to preview them in local machine.</p>
+<h2 id="publishing">Publishing</h2>
+<p>If we want publish it in our own server, its going to be very easy. Just copy the folder _site in your webserver and you are good to go.
+Publishing in github pages, requires some further steps.</p>
+<ul>
+<li>
+<p>Assuming you have a github account, create a repository with the name <!-- raw HTML omitted -->.github.io. Replace <!-- raw HTML omitted --> with your github username.</p>
+</li>
+<li>
+<p>In your jekyll project directory, init the git repository.</p>
+<pre><code>  :::bash
+  git init #Add the newly created repo as new remote origin.
+  git remote add origin &lt;github project url&gt; # add the newly created repo as remote origin
+  git add &lt;directories&gt; &lt;files&gt; # add all files.
+  git commit -m &quot;Initial commit&quot; # commit everything.
+  git push origin master # push to server.
+</code></pre>
+</li>
+<li>
+<p>Now wait for another twenty minutes, then your site will be up in <a href="http://username.github.io">http://username.github.io</a></p>
+</li>
+</ul>
+<h1 id="pelican">Pelican</h1>
+<p>Pelican on the other hand is purely written in Python. If you are a Python fan, you have to try this first, because it will be easier to debug and change the code as you already knew python. Installing is very easy. Use pip.</p>
+<pre><code>:::bash
+pip install pelican
+</code></pre>
+<p>If you want to use markdown syntax, then install markdown</p>
+<pre><code>:::bash
+pip install markdown
+</code></pre>
+<p>By running <code>pelican-quickstart</code>, we can create a new pelican site from scratch. Pelican also allows you to write post using <code>RST</code> format. When running the <code>pelican-quickstart</code> command, you will be asked if you want to create a make for the site. Click yes, and you&rsquo;ll get lots of handy shortcuts to important functions like <code>make html</code> will generate the htmls in output directory, <code>make serve</code> will start a development server in localhost so that we can preview the website.</p>
+<h2 id="migrating-from-other-blogging-platforms">Migrating from other blogging platforms</h2>
+<p>Migrating from other blogs is a pain. Eventhough there are lots tools availabel today, you&rsquo;ll have to manually make minor edits in all your previous posts. I used blogger before. After few attempts to import them in static site generator, I decided to leave the earlier posts blogger itself because they were not worthy to spend time to import them from blogger to static site. Jekyll has built-in support for importing posts from wordpress and few other platforms. To import from blogger, you&rsquo;ll have to export them into xml in blogger dashboard, and import them in Jekyll or Pelican. There is no direct import option for blogger.</p>
+<h2 id="pelican-themes">Pelican Themes</h2>
+<p>There is a github repository, that accumulates all pelican themes in one repo. clone <a href="https://github.com/getpelican/pelican-themes">this</a> repository from github and you&rsquo;ll be able to use theme by adding the theme directory in pelican settings file.</p>
+<pre><code>:::bash
+git clone https://github.com/getpelican/pelican-themes.git
+</code></pre>
+<p>open pelican and add the following line.</p>
+<pre><code>:::python
+THEME = &quot;/home/user/pelican-themes/theme-name&quot; # this should be path of downloaded theme.
+</code></pre>
+<h2 id="commenting">Commenting</h2>
+<p>The only thing that you will miss mostly is commenting in your posts. People can not comment in static sites. I don&rsquo;t actually care about any comments on my posts. Most people use third party commenting system like <a href="https://disqus.com/">Disqus</a>. It works well with static sites. Another option is to use google+ comments.</p>
+
+    </article>
+
+    
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer">
+          <a href="/posts/2015-06-02-crawling-web-pages-with-scrapy/" data-toggle="tooltip" data-placement="top" title="Crawling web pages using Python and Scrapy - Tutorial">&lt; Newer</a>
+      </li>
+      <li class="pager-older">
+        <a href="/posts/2014-04-29-an-android-app/" data-toggle="tooltip" data-placement="top" title="An Android app to search baby names">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright"></div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>

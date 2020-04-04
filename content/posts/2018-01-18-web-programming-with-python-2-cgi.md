@@ -8,7 +8,6 @@ tags:
 - apache
 title: Web programming with Python - Part 2 - CGI
 updated: "2018-01-18 05:00:00"
-url: /:categories/:title/
 ---
 
 If you have read the [previous post](/python/web-programming-with-python-1-web-servers/), we stopped after introducing web servers. In this post, we write very simple web application using cgi programming. 

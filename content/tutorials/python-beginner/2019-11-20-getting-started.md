@@ -55,7 +55,7 @@ Create a directory named `pyprograms` in your home directory. In this directory 
 print('Hello World!')
 ```
 Now you can run the program with 
-```bash
+```shell
 python hello.py
 ```
 

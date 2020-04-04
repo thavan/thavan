@@ -11,7 +11,6 @@ title: Deploying Django Application with Nginx and uwsgi
 toc:
 - true
 updated: "2018-11-06 05:00:00"
-url: /:categories/:title/
 ---
 
 # Introduction

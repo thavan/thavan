@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Reduce memory usage in Python using slots - Thavanathan</title>
+  <meta property="og:title" content="Reduce memory usage in Python using slots - Thavanathan" />
+  <meta name="twitter:title" content="Reduce memory usage in Python using slots - Thavanathan" />
+  <meta name="description" content="slots is a kind of Python magic that reduces memory usage of a program. It&rsquo;s useful only when we have a lot objects with fixed number of attributes. For example let&rsquo;s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,
+class CartItem(object): def __init__(self, item_id, added_time): self._item_id = item_id self._added_time = added_time Let&rsquo;s create an object for CartItem.">
+  <meta property="og:description" content="slots is a kind of Python magic that reduces memory usage of a program. It&rsquo;s useful only when we have a lot objects with fixed number of attributes. For example let&rsquo;s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,
+class CartItem(object): def __init__(self, item_id, added_time): self._item_id = item_id self._added_time = added_time Let&rsquo;s create an object for CartItem.">
+  <meta name="twitter:description" content="slots is a kind of Python magic that reduces memory usage of a program. It&rsquo;s useful only when we have a lot objects with fixed number of attributes. For example let&rsquo;s assume we have a …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="Thavanathan" />
+  <meta property="og:url" content="http://example.org/posts/2017-04-11-python-save-memory-usage-with-slots/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Thavanathan</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-"><a href="/" title="Home">Home</a></li>
+      <li class="site-navi-item-"><a href="/posts/" title="Posts">Posts</a></li>
+      <li class="site-navi-item-"><a href="/pages/tutorials/" title="Tutorials">Tutorials</a></li>
+      <li class="site-navi-item-"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Reduce memory usage in Python using slots</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>April 11, 2017</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/python/">
+            <i class="fas fa-folder"></i>
+            Python
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/python-slots/">
+            <i class="fas fa-tag"></i>
+            python-slots
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/memory/">
+            <i class="fas fa-tag"></i>
+            memory
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#summary-">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+      <p>slots is a kind of Python magic that reduces memory usage of a program. It&rsquo;s useful only when we have a
+lot objects with fixed number of attributes. For example let&rsquo;s assume we have a online shopping website.
+whenever a user adds a item to the cart, we create a object for that item. For example,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CartItem</span>(<span style="color:#8be9fd;font-style:italic">object</span>):
+
+    <span style="color:#ff79c6">def</span> __init__(self, item_id, added_time):
+        self<span style="color:#ff79c6">.</span>_item_id <span style="color:#ff79c6">=</span> item_id
+        self<span style="color:#ff79c6">.</span>_added_time <span style="color:#ff79c6">=</span> added_time
+</code></pre></div><p>Let&rsquo;s create an object for CartItem.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; i = CartItem(232322232, &#39;2016-12-12 02:23&#39;) 
+&gt;&gt;&gt; i._added_time
+&#39;2016-12-12 02:23&#39;
+&gt;&gt;&gt; i.count = 3
+&gt;&gt;&gt; i.myvariable = &#39;hello&#39;
+&gt;&gt;&gt; i.__dict__
+{&#39;_added_time&#39;: &#39;2016-12-12 02:23&#39;, &#39;count&#39;: 3, &#39;_item_id&#39;: 232322232, &#39;myvariable&#39;: &#39;hello&#39;}
+&gt;&gt;&gt; 
+</code></pre></div><p>as we noticed, we are free to add any new property to our CartItem object, and object&rsquo;s <code>__dict__</code> contains all
+the properties of the class. Let&rsquo;s say there are millions of Items floating around in all shopping carts.
+As python uses dictionary to store variables, each dictionary will have a hash table for faster lookups. This
+requires additional space. This space is insignificant when we have a minimum number of objects. But it can
+consume a lot of space if the number of objects are relatively very high.</p>
+<p>There is a special class variable in Python called <code>__slots__</code>. Let&rsquo;s update our CartItem class
+to use <code>__slots__</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CartItem</span>(<span style="color:#8be9fd;font-style:italic">object</span>):
+    __slots__ <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">_item_id</span><span style="color:#f1fa8c">&#39;</span>, <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">_added_date</span><span style="color:#f1fa8c">&#39;</span>)
+
+    <span style="color:#ff79c6">def</span> __init__(self, item_id, added_time):
+        self<span style="color:#ff79c6">.</span>_item_id <span style="color:#ff79c6">=</span> item_id
+        self<span style="color:#ff79c6">.</span>_added_time <span style="color:#ff79c6">=</span> added_time
+</code></pre></div><p>Let&rsquo;s play around with our new class</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; i = CartItem(232322232, &#39;2016-12-12 02:23&#39;)
+&gt;&gt;&gt; i._added_time
+&#39;2016-12-12 02:23&#39;
+&gt;&gt;&gt; i._updated_time = &#39;2016-12-12 02:23&#39; # can&#39;t add new attributes
+Traceback (most recent call last):
+  File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
+AttributeError: &#39;CartItem&#39; object has no attribute &#39;_updated_time&#39;
+&gt;&gt;&gt; i.__dict__ # there is not __dict__ when you use slots.
+Traceback (most recent call last):
+  File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
+AttributeError: &#39;CartItem&#39; object has no attribute &#39;__dict__&#39;
+</code></pre></div><p>Now the CartItem object is not allowing us create new attributes in the object unless they are specified
+in <code>__slots__</code>. <code>__slots__</code> can be a string with name of a attribute or an iterable with list of strings
+specifying attribute names. When we add <code>__slots__</code> to a class, Python will actually use tuple to store attributes instead of using a dictionary.
+In the above example we can clearly see that accessing <code>__dict__</code> of the object raised a exception. By using
+tuple instead of a dictionary we save a little bit of memory in our object. This little memory adds up and
+become huge when there are huge number of objects in your application.</p>
+<p>Let&rsquo;s try to measure our CartItem memory usage with and without <code>__slots__</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> resource
+<span style="color:#ff79c6">import</span> time
+
+TOTAL_OBJECTS <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">*</span><span style="color:#ff79c6">*</span> <span style="color:#bd93f9">7</span>  <span style="color:#6272a4"># 10 millions</span>
+
+
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CartItem</span>(<span style="color:#8be9fd;font-style:italic">object</span>):
+    <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#34;&#34;&#34;</span><span style="color:#f1fa8c">A simple shopping cart.</span><span style="color:#f1fa8c">
+</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">    </span><span style="color:#f1fa8c">&#34;&#34;&#34;</span>
+    __slots__ <span style="color:#ff79c6">=</span> (<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">_item_id</span><span style="color:#f1fa8c">&#39;</span>, <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">_added_time</span><span style="color:#f1fa8c">&#39;</span>)
+
+    <span style="color:#ff79c6">def</span> __init__(self, item_id, added_time):
+        self<span style="color:#ff79c6">.</span>_item_id <span style="color:#ff79c6">=</span> item_id
+        self<span style="color:#ff79c6">.</span>_added_time <span style="color:#ff79c6">=</span> added_time
+
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">get_usage</span>():
+    <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#34;&#34;&#34;</span><span style="color:#f1fa8c">Finds the elapsed time and RAM usage of current process.</span><span style="color:#f1fa8c">
+</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">    Creates 10 million objects of CartItem in a list for measurement.</span><span style="color:#f1fa8c">
+</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">    :return: </span><span style="color:#f1fa8c">
+</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">    </span><span style="color:#f1fa8c">&#34;&#34;&#34;</span>
+    initial_usage <span style="color:#ff79c6">=</span> resource<span style="color:#ff79c6">.</span>getrusage(resource<span style="color:#ff79c6">.</span>RUSAGE_SELF)<span style="color:#ff79c6">.</span>ru_maxrss
+    start_time <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>perf_counter()
+    items <span style="color:#ff79c6">=</span> [CartItem(<span style="color:#bd93f9">232322232</span>, <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">2016-12-12 02:23</span><span style="color:#f1fa8c">&#39;</span>) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(TOTAL_OBJECTS)]
+    final_usage <span style="color:#ff79c6">=</span> resource<span style="color:#ff79c6">.</span>getrusage(resource<span style="color:#ff79c6">.</span>RUSAGE_SELF)<span style="color:#ff79c6">.</span>ru_maxrss
+    total_time <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>perf_counter() <span style="color:#ff79c6">-</span> start_time
+    total_usage <span style="color:#ff79c6">=</span> (final_usage <span style="color:#ff79c6">-</span> initial_usage) <span style="color:#ff79c6">/</span> (<span style="color:#bd93f9">1024</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">1024</span>)
+    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">Total Time: {:.2f} seconds</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(total_time))
+    <span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">Total memory usage: {:.2f} megabytes</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">.</span>format(total_usage))
+
+
+<span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">__main__</span><span style="color:#f1fa8c">&#39;</span>:
+    get_usage()
+</code></pre></div><p>The output is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ python3 ram_usage.py
+Total Time: 8.82 seconds
+Total memory usage: 561.23 megabytes
+</code></pre></div><p>If we run the same program after removing <code>__slots__</code> class variable,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ python3 ram_usage.py
+Total Time: 11.08 seconds
+Total memory usage: 1293.38 megabytes
+</code></pre></div><p>Clearly, the space is reduced around 43% after using slots.</p>
+<h3 id="summary-">Summary</h3>
+<ul>
+<li>When there is a huge number of objects with fixed number of properties, using <code>__slots__</code> can be huge
+beneficial to reduce RAM usage.</li>
+<li><code>__slots__</code> should be declared in every class. If your parent class has defined <code>__slots__</code>, child class
+will ignore it.</li>
+<li><code>__slots__</code> prohibits creating new attributes to objects unless they are specified in <strong>slots</strong>. This
+side effect cannot be misused to protect your objects from creating new properties.</li>
+<li>All the attributes are stored in tuple instead of object&rsquo;s <code>__dict__</code> to save space.</li>
+</ul>
+
+    </article>
+
+    
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer">
+          <a href="/categories/title/" data-toggle="tooltip" data-placement="top" title="Web programming with Python - Part 1 - Web Servers">&lt; Newer</a>
+      </li>
+      <li class="pager-older">
+        <a href="/posts/2017-03-19-python-list-comprehensions-and-generator-expressions/" data-toggle="tooltip" data-placement="top" title="Python List Comprehensions and generator expressions">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright"></div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>

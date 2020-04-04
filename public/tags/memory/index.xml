@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>memory on Thavanathan</title>
+    <link>http://example.org/tags/memory/</link>
+    <description>Recent content in memory on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Apr 2017 09:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reduce memory usage in Python using slots</title>
+      <link>http://example.org/posts/2017-04-11-python-save-memory-usage-with-slots/</link>
+      <pubDate>Tue, 11 Apr 2017 09:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/2017-04-11-python-save-memory-usage-with-slots/</guid>
+      <description>slots is a kind of Python magic that reduces memory usage of a program. It&amp;rsquo;s useful only when we have a lot objects with fixed number of attributes. For example let&amp;rsquo;s assume we have a online shopping website. whenever a user adds a item to the cart, we create a object for that item. For example,
+class CartItem(object): def __init__(self, item_id, added_time): self._item_id = item_id self._added_time = added_time Let&amp;rsquo;s create an object for CartItem.</description>
+    </item>
+    
+  </channel>
+</rss>

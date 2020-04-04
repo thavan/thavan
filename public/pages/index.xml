@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Thavanathan</title>
+    <link>http://example.org/pages/</link>
+    <description>Recent content in Pages on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Go Journey</title>
+      <link>http://example.org/pages/tutorials/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/pages/tutorials/</guid>
+      <description>Python Beginner Tutorial This is a series of articles aimed to introduce Python to beginners.
+ Introduction Installing Python Getting Started &amp;hellip; &amp;hellip;  Django Beginner Tutorial Django beginner level tutorial is written to introduce django to newcomers. This is a example based approach. Throughout this tutorial we will build different Django applications to introduce all necessary topics.
+ Web servers and clients CGI Part II Django Introduction &amp;hellip; &amp;hellip;  </description>
+    </item>
+    
+  </channel>
+</rss>

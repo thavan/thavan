@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>django on Thavanathan</title>
+    <link>http://example.org/tags/django/</link>
+    <description>Recent content in django on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2019 05:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django Introduction</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Python&amp;rsquo;s CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it to build a usable and secure website. When building a web application we often come across some common tasks like authenticating users, connecting to a database, sending emails to users, a reliable admin interface to manage and add content to our site, etc. If we solve all of these problems ourselves, it is time-consuming.</description>
+    </item>
+    
+    <item>
+      <title>Web programming with Python - Django Introduction</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Python&amp;rsquo;s CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it to build a usable and secure website. When building a web application we often come across some common tasks like authenticating users, connecting to a database, sending emails to users, a reliable admin interface to manage and add content to our site, etc. If we solve all of these problems ourselves, it is time-consuming.</description>
+    </item>
+    
+    <item>
+      <title>Deploying Django Application with Nginx and uwsgi</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Sat, 08 Dec 2018 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction In this post we will learn about deploying Django applications. There are many ways to deploy a Django application. we can use either nginx or apache web server. Nginx is just a web server. It doesn&amp;rsquo;t know how to run Python programs. For this, we need a server which understands how to run python programs. This server is called application server. To run a application server, we can use uwsgi, gunicorn and etc.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/tags/python/</loc>
+    <lastmod>2020-02-14T16:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <lastmod>2020-02-14T16:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-02-14T16:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tutorials/</loc>
+    <lastmod>2020-02-14T16:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tutorials/python-beginner/variables/</loc>
+    <lastmod>2020-02-14T16:14:00+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+    <lastmod>2019-11-20T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tutorials/python-beginner/2019-11-20-getting-started/</loc>
+    <lastmod>2019-11-20T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/python-beginner-tutorial/</loc>
+    <lastmod>2019-11-20T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tutorials/python-beginner/2019-11-17-installing-python/</loc>
+    <lastmod>2019-11-17T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tutorials/python-beginner/2019-11-14-introduction/</loc>
+    <lastmod>2019-11-14T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/django/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/django/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/django-beginner-tutorial/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/python/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2019-11-07T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2018-12-08T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/nginx/</loc>
+    <lastmod>2018-12-08T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/apache/</loc>
+    <lastmod>2018-01-18T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/cgi/</loc>
+    <lastmod>2018-01-18T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2018-01-18T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2018-01-18T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2017-11-15T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/title/</loc>
+    <lastmod>2017-11-15T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/memory/</loc>
+    <lastmod>2017-04-11T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/python-slots/</loc>
+    <lastmod>2017-04-11T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2017-04-11-python-save-memory-usage-with-slots/</loc>
+    <lastmod>2017-04-11T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/pages/tutorials/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/pages/</loc>
+    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2017-03-19-python-list-comprehensions-and-generator-expressions/</loc>
+    <lastmod>2017-03-19T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/crawling/</loc>
+    <lastmod>2015-06-02T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2015-06-02-crawling-web-pages-with-scrapy/</loc>
+    <lastmod>2015-06-02T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/scrapy/</loc>
+    <lastmod>2015-06-02T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/blog/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/jekyll/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/pelican/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/publishing/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2015-01-30-static-site-generators/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/static-site/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2014-04-29-an-android-app/</loc>
+    <lastmod>2014-04-29T14:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/android/</loc>
+    <lastmod>2014-04-29T14:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/2013-08-28-python-profiling/</loc>
+    <lastmod>2013-08-28T09:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/about/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crawling on Thavanathan</title>
+    <link>http://example.org/tags/crawling/</link>
+    <description>Recent content in crawling on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2015 09:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/crawling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Crawling web pages using Python and Scrapy - Tutorial</title>
+      <link>http://example.org/posts/2015-06-02-crawling-web-pages-with-scrapy/</link>
+      <pubDate>Tue, 02 Jun 2015 09:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/2015-06-02-crawling-web-pages-with-scrapy/</guid>
+      <description>In this post, let us walk through how we can crawl web pages using Scrapy.
+For this tutorial, we will download all the excerpts and ebooks available in https://www.goodreads.com/ebooks?sort=popular_books. This page is paginated. Let&amp;rsquo;s download books from first page only. At the end of this post, you will know how to follow and crawl other pages too.
+First lets create a python virtual environment called goodreads.
+mkvirtualenv goodreads workon goodreads To know more about how mkvirtualenv and workon commands work, visit and install virtualenvwrapper</description>
+    </item>
+    
+  </channel>
+</rss>

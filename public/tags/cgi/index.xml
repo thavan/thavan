@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cgi on Thavanathan</title>
+    <link>http://example.org/tags/cgi/</link>
+    <description>Recent content in cgi on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jan 2018 05:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/cgi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CGI Programming with Python</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 18 Jan 2018 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>If you have read the previous post, we stopped after introducing web servers. In this post, we write very simple web application using cgi programming.
+CGI stands for Common Gateway Interface. Let&amp;rsquo;s say we received a web request, and we want to process that request with Python. CGI is basically a script that is run by the web server whenever a request is received. The script can be a Python script or a Shell script or Ruby script.</description>
+    </item>
+    
+    <item>
+      <title>Web programming with Python - Part 2 - CGI</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 18 Jan 2018 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>If you have read the previous post, we stopped after introducing web servers. In this post, we write very simple web application using cgi programming.
+CGI stands for Common Gateway Interface. Let&amp;rsquo;s say we received a web request, and we want to process that request with Python. CGI is basically a script that is run by the web server whenever a request is received. The script can be a Python script or a Shell script or Ruby script.</description>
+    </item>
+    
+    <item>
+      <title>Web programming with Python - Part 1 - Web Servers</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Wed, 15 Nov 2017 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.</description>
+    </item>
+    
+    <item>
+      <title>Web Servers and clients</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Wed, 15 Nov 2017 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.</description>
+    </item>
+    
+  </channel>
+</rss>

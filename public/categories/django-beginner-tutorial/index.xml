@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django-Beginner-Tutorial on Thavanathan</title>
+    <link>http://example.org/categories/django-beginner-tutorial/</link>
+    <description>Recent content in Django-Beginner-Tutorial on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2019 05:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/django-beginner-tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django Introduction</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Python&amp;rsquo;s CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it to build a usable and secure website. When building a web application we often come across some common tasks like authenticating users, connecting to a database, sending emails to users, a reliable admin interface to manage and add content to our site, etc. If we solve all of these problems ourselves, it is time-consuming.</description>
+    </item>
+    
+    <item>
+      <title>CGI Programming with Python</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Thu, 18 Jan 2018 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>If you have read the previous post, we stopped after introducing web servers. In this post, we write very simple web application using cgi programming.
+CGI stands for Common Gateway Interface. Let&amp;rsquo;s say we received a web request, and we want to process that request with Python. CGI is basically a script that is run by the web server whenever a request is received. The script can be a Python script or a Shell script or Ruby script.</description>
+    </item>
+    
+    <item>
+      <title>Web Servers and clients</title>
+      <link>http://example.org/categories/title/</link>
+      <pubDate>Wed, 15 Nov 2017 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/title/</guid>
+      <description>Introduction Web programming or web development is a term that broadly means developing websites. Developing websites mainly consists of two parts.
+ Front end development. Back end development.  Front end includes html, javascript and css. We can also say it is the creativity part. If you are more interested in creating beautiful websites, this is the path you should take. Backend involves in server side development including application business logic, database design and development, server deployment and maintenance and etc.</description>
+    </item>
+    
+  </channel>
+</rss>

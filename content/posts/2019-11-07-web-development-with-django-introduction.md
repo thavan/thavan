@@ -11,7 +11,6 @@ title: Web programming with Python - Django Introduction
 toc:
 - true
 updated: "2018-11-06 05:00:00"
-url: /:categories/:title/
 ---
 ## Introduction
 Python's CGI library is good enough for writing websites from ground up. But we need to put a lot of effort into it 

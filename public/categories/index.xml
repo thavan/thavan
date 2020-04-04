@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Thavanathan</title>
+    <link>http://example.org/categories/</link>
+    <description>Recent content in Categories on Thavanathan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Nov 2019 05:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python-Beginner-Tutorial</title>
+      <link>http://example.org/categories/python-beginner-tutorial/</link>
+      <pubDate>Wed, 20 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/python-beginner-tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>http://example.org/categories/django/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django-Beginner-Tutorial</title>
+      <link>http://example.org/categories/django-beginner-tutorial/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/django-beginner-tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://example.org/categories/python/</link>
+      <pubDate>Thu, 07 Nov 2019 05:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>http://example.org/categories/android/</link>
+      <pubDate>Tue, 29 Apr 2014 14:25:00 +0000</pubDate>
+      
+      <guid>http://example.org/categories/android/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

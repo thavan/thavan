@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Crawling web pages using Python and Scrapy - Tutorial - Thavanathan</title>
+  <meta property="og:title" content="Crawling web pages using Python and Scrapy - Tutorial - Thavanathan" />
+  <meta name="twitter:title" content="Crawling web pages using Python and Scrapy - Tutorial - Thavanathan" />
+  <meta name="description" content="In this post, let us walk through how we can crawl web pages using Scrapy.
+For this tutorial, we will download all the excerpts and ebooks available in https://www.goodreads.com/ebooks?sort=popular_books. This page is paginated. Let&rsquo;s download books from first page only. At the end of this post, you will know how to follow and crawl other pages too.
+First lets create a python virtual environment called goodreads.
+mkvirtualenv goodreads workon goodreads To know more about how mkvirtualenv and workon commands work, visit and install virtualenvwrapper">
+  <meta property="og:description" content="In this post, let us walk through how we can crawl web pages using Scrapy.
+For this tutorial, we will download all the excerpts and ebooks available in https://www.goodreads.com/ebooks?sort=popular_books. This page is paginated. Let&rsquo;s download books from first page only. At the end of this post, you will know how to follow and crawl other pages too.
+First lets create a python virtual environment called goodreads.
+mkvirtualenv goodreads workon goodreads To know more about how mkvirtualenv and workon commands work, visit and install virtualenvwrapper">
+  <meta name="twitter:description" content="In this post, let us walk through how we can crawl web pages using Scrapy.
+For this tutorial, we will download all the excerpts and ebooks available in …">
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="Thavanathan" />
+  <meta property="og:url" content="http://example.org/posts/2015-06-02-crawling-web-pages-with-scrapy/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  <link rel="stylesheet" href="/css/style.css" media="all" />
+  <link rel="stylesheet" href="/css/syntax.css" media="all" />
+  <link rel="stylesheet" href="/css/custom.css" media="all" />
+
+  <script src="/js/script.js"></script>
+  <script src="/js/custom.js"></script>
+  <script defer src="/js/fontawesome.js"></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="/">Thavanathan</a></h1>
+    <ul class="site-navi-items">
+      <li class="site-navi-item-"><a href="/" title="Home">Home</a></li>
+      <li class="site-navi-item-"><a href="/posts/" title="Posts">Posts</a></li>
+      <li class="site-navi-item-"><a href="/pages/tutorials/" title="Tutorials">Tutorials</a></li>
+      <li class="site-navi-item-"><a href="/about/" title="About">About</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">
+
+  <div class="main" role="main">
+    <article class="article">
+      
+      
+      <h1 class="article-title">Crawling web pages using Python and Scrapy - Tutorial</h1>
+      
+      <hr class="article-title-bottom">
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>June 2, 2015</time></li>
+        <li class="article-meta-categories">
+          <a href="/categories/python/">
+            <i class="fas fa-folder"></i>
+            Python
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/crawling/">
+            <i class="fas fa-tag"></i>
+            crawling
+          </a>&nbsp;
+        </li>
+        <li class="article-meta-tags">
+          <a href="/tags/scrapy/">
+            <i class="fas fa-tag"></i>
+            scrapy
+          </a>&nbsp;
+        </li>
+      </ul>
+      
+<aside class="toc">
+  <nav id="TableOfContents"></nav>
+</aside>
+      <p>In this post, let us walk through how we can crawl web pages using <a href="http://scrapy.org/">Scrapy</a>.</p>
+<p>For this tutorial, we will download all the excerpts and ebooks available in <a href="https://www.goodreads.com/ebooks?sort=popular_books">https://www.goodreads.com/ebooks?sort=popular_books</a>. This page is paginated. Let&rsquo;s download books from first page only. At the end of this post, you will know how to follow and crawl other pages too.</p>
+<p>First lets create a python virtual environment called goodreads.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkvirtualenv goodreads
+workon goodreads</code></pre></div>
+<p>To know more about how mkvirtualenv and workon commands work, visit and install <a href="https://virtualenvwrapper.readthedocs.org/">virtualenvwrapper</a></p>
+<p>Now, lets install scrapy.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install scrapy</code></pre></div>
+<p>After installing, lets create a new project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scrapy startproject goodreads
+<span style="color:#8be9fd;font-style:italic">cd</span> goodreads</code></pre></div>
+<p>This will create the following directory structure.</p>
+<pre><code>├── goodreads
+│   ├── __init__.py
+│   ├── items.py
+│   ├── pipelines.py
+│   ├── settings.py
+│   └── spiders
+│       └── __init__.py
+└── scrapy.cfg
+</code></pre>
+<p>For this tutorial, we will only touch spiders directory, settings.py, items.py. Spider directory will contain all the spiders, otherwise called crawlers. settings.py will have project related settings. items.py will define your models. Model or Item is a definition of a object that you are going to crawl. For example, if we crawl stock details from a page, we can define a item like the one below</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Stock</span>(scrapy<span style="color:#ff79c6">.</span>Item):
+    company_name <span style="color:#ff79c6">=</span> scrapy<span style="color:#ff79c6">.</span>Field()
+    price <span style="color:#ff79c6">=</span> scrapy<span style="color:#ff79c6">.</span>Field()</code></pre></div>
+<p>For our project we will create a item with following field. open goodreads/items.py and add following lines.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> scrapy
+
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">GoodreadsItem</span>(scrapy<span style="color:#ff79c6">.</span>Item):
+    file_name <span style="color:#ff79c6">=</span> scrapy<span style="color:#ff79c6">.</span>Field()</code></pre></div>
+<p>We will save downloaded path of the document in file_name field.</p>
+<p>Now lets create a spider to crawl books. Run the following command in terminal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    scrapy genspider goodread_spider http://www.goodreads.com/ebooks?page<span style="color:#ff79c6">=</span>1&amp;<span style="color:#8be9fd;font-style:italic">sort</span><span style="color:#ff79c6">=</span>popular_books -t crawl</code></pre></div>
+<p>This will generate the spider file called goodreads_spider. A spider is somethings that crawls web pages and follows the links on that page to crawl other pages. Spider itself will not follow links available in a page. We have to define rules to follow links.</p>
+<p>Open goodreads/spiders/goodread_spider.py</p>
+<p>Let&rsquo;s adjust some variables according to out site.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">allowed_domains</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;www.goodreads.com&#39;</span>, <span style="color:#f1fa8c">&#39;s3.amazonaws.com&#39;</span><span style="color:#ff79c6">]</span>
+<span style="color:#8be9fd;font-style:italic">start_urls</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">[</span><span style="color:#f1fa8c">&#39;http://www.goodreads.com/ebooks?page=1&amp;sort=popular_books&#39;</span><span style="color:#ff79c6">]</span></code></pre></div>
+<p>s3.amazonaws.com is where goodreads books are hosted. So we have to add this domain to allowed_domains list.</p>
+<p>Now lets add a rule to follow and download ebook. Edit the rule defined to match with following line.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rules <span style="color:#ff79c6">=</span> (
+    Rule(LinkExtractor(allow<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">r</span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">ebooks/download/.*</span><span style="color:#f1fa8c">&#39;</span>), callback<span style="color:#ff79c6">=</span><span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">parse_item</span><span style="color:#f1fa8c">&#39;</span>, follow<span style="color:#ff79c6">=</span>True),
+)</code></pre></div>
+<p>follow=True means follow them if any other links present in the crawled page. Even if follow is true, it should match any of defined rules. ebook/download/&lt;item_id&gt; will actually return ebook document. It may be any file including pdf, epub, mobi and zip.</p>
+<p>Every time an item is fetched our callback function parse_item will called with the response object.</p>
+<p>Lets make some changes in parse_item function in the same file to save our downloaded books. Edit the parse_item function to match with the following lines.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> goodreads.items <span style="color:#ff79c6">import</span> GoodreadsItem
+<span style="color:#ff79c6">from</span> scrapy <span style="color:#ff79c6">import</span> log
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">parse_item</span>(self, response):
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> response<span style="color:#ff79c6">.</span>headers[<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">Content-Type</span><span style="color:#f1fa8c">&#39;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">text/html; charset=utf-8</span><span style="color:#f1fa8c">&#39;</span>:
+        item <span style="color:#ff79c6">=</span> GoodreadsItem()
+        item[<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">file_name</span><span style="color:#f1fa8c">&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">/Users/thavan/learnspace/ebooks/</span><span style="color:#f1fa8c">&#39;</span> <span style="color:#ff79c6">+</span> response<span style="color:#ff79c6">.</span>url<span style="color:#ff79c6">.</span>split(<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">/</span><span style="color:#f1fa8c">&#39;</span>)[<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]
+        <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(item[<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">file_name</span><span style="color:#f1fa8c">&#39;</span>], <span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">wb</span><span style="color:#f1fa8c">&#39;</span>) <span style="color:#ff79c6">as</span> f:
+            f<span style="color:#ff79c6">.</span>write(response<span style="color:#ff79c6">.</span>body)
+        log<span style="color:#ff79c6">.</span>msg(<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">Path {0}</span><span style="color:#f1fa8c">&#39;</span><span style="color:#ff79c6">.</span>format(item[<span style="color:#f1fa8c"></span><span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">file_name</span><span style="color:#f1fa8c">&#39;</span>]), level<span style="color:#ff79c6">=</span>log<span style="color:#ff79c6">.</span>DEBUG)
+        <span style="color:#ff79c6">return</span> item</code></pre></div>
+<p>We have added an if condition to make sure we download only books not html pages. If it is text/html we omit the response else we save the response in a file.</p>
+<p>Now lets run the crawler</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scrapy crawl goodread_spider</code></pre></div>
+<p>As mentioned earlier, this spider will crawl books in only first page. To crawl all the books in different pages, we have to add one more rule. Add the below line to Rules tuple in goodread_spider.py</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Rule<span style="color:#ff79c6">(</span>LinkExtractor<span style="color:#ff79c6">(</span><span style="color:#8be9fd;font-style:italic">allow</span><span style="color:#ff79c6">=</span>r<span style="color:#f1fa8c">&#39;ebooks\?page=\d+&amp;sort=popular_books&#39;</span><span style="color:#ff79c6">)</span>, <span style="color:#8be9fd;font-style:italic">follow</span><span style="color:#ff79c6">=</span>True<span style="color:#ff79c6">)</span>,</code></pre></div>
+<p>That&rsquo;s it for now. Use settings.py to change project related settings. User agent can be changed in settings.py. Open goodreads/settings.py and change the USER_AGENT. You can also set delay between every page request. DOWNLOAD_DELAY = 0.25 will set 250ms delay before sending a request.</p>
+<p>As a final note, crawling a website going to give extra load to server. The example given in this tutorial is only for educational purpose. Crawl responsibly by identifying yourself (and your website) on the user-agent.</p>
+
+    </article>
+
+    
+
+
+    <ul class="pager article-pager">
+      <li class="pager-newer">
+          <a href="/posts/2017-03-19-python-list-comprehensions-and-generator-expressions/" data-toggle="tooltip" data-placement="top" title="Python List Comprehensions and generator expressions">&lt; Newer</a>
+      </li>
+      <li class="pager-older">
+        <a href="/posts/2015-01-30-static-site-generators/" data-toggle="tooltip" data-placement="top" title="Static Site Generators">Older &gt;</a>
+      </li>
+    </ul>
+  </div>
+
+
+<div class="site-footer">
+  <div class="copyright"></div>
+  <ul class="site-footer-items">
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/taikii/whiteplain">Whiteplain</a>
+  </div>
+</div>
+
+
+</body>
+</html>
