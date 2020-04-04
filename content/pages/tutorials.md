@@ -1,15 +1,15 @@
 ---
-title: My Go Journey
-date: 2017-03-23
-publishdate: 2017-03-24
+title: Python and Django tutorials
+date: 2020-04-04
 ---
 
 ## Python Beginner Tutorial
 This is a series of articles aimed to introduce Python to beginners.
 
-* [Introduction]({{< ref "/tutorials/python-beginner/2019-11-14-introduction.md" >}})
-* [Installing Python]({{< ref "/tutorials/python-beginner/2019-11-17-installing-python.md" >}})
-* [Getting Started]({{< ref "/tutorials/python-beginner/2019-11-20-getting-started.md" >}})
+* [Introduction]({{<ref "/tutorials/python-beginner/2019-11-14-introduction.md">}})
+* [Installing Python]({{<ref "/tutorials/python-beginner/2019-11-17-installing-python.md">}})
+* [Getting Started]({{<ref "/tutorials/python-beginner/2019-11-20-getting-started.md">}})
+* [Variable and Basic Data types]({{<ref "/tutorials/python-beginner/variables-and-simple-data-types.md">}})
 * ...
 * ...
 
