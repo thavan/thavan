@@ -1,5 +1,5 @@
 ---
-title: "Variables and Simple data structures"
+title: "Variables and Simple data types"
 date: 2020-02-14T16:14:00+05:30
 subtitle: ""
 tags: [python]
@@ -43,151 +43,97 @@ s = "This is also a string" # note double quotes
 ```python
 msg = 'I don\'t like it'
 ```
-In the above statement, our string is covered with single quotes and we also use single single quote
-inside the string. In that case, we have to quote the inside single quote. Or we can simply use,
+In the above statement, our string is covered with single quotes and we also use a single quote
+inside the string. In that case, we have to escape the inside single quote. By escaping the single
+quote we tell Python that don't take any special meaning for inside single quote. There is also
+another way of writing above statement.
 ```python
 msg = "I don't like it"
 ```
+As we use single quote inside the string, we can use double quote outside.
 
-3.1.1 Rules
+### String methods
+String manipulation is an important part of programming. We often format strings before
+presenting it the user. In this section we will see some of the string methods. `Please note
+that, in Python, any string method always returns new string.` This is because of the
+immutable property of string.
 
-    Must start with same start and end quotes
-    backslace for escaping.
-
-In [ ]:
-
-'This isn\'t a int'
-
-In [ ]:
-
-"This isn't a int"
-
-In [ ]:
-
+>
+```python
 name = 'john smith'
+```
+- `name.title()`  returns every word's first letter capitalized.
+- `name.capitalize()` returns first letter of the string capitalized.
+- `name.upper()` return upper case string.
+- `name.lower()` return lower case string.
+```python
+>>> name.title()
+'John Smith'
+>>> name.capitalize()
+'John smith'
+>>> name.upper()
+'JOHN SMITH'
+>>> name.lower()
+'john smith'
+```
 
-In [ ]:
+Let's say we have two strings.
 
-name.title()
-
-In [ ]:
-
-name.capitalize()
-
-In [ ]:
-
-name.upper()
-
-In [ ]:
-
-name.lower()
-
-In [ ]:
-
+```python
 first_name = 'John'
 last_name = 'Smith'
-
-In [ ]:
-
-first_name + ' ' + last_name
-
-In [ ]:
-
+```
+To concatenate two strings.
+```python
+>>> first_name + ' ' + last_name
+'John Smith'
+```
+You can use `\n` to print new line and `\t` to print tabs.
+```python
 print('\tHello\nworld')
+```
+`strip()` method removes white spaces from beginning`rstrip()` removes white spaces from 
+right side of the string. `lstrip()` removes white spaces from beginning of the string.
 
-In [ ]:
+```python
+>>> 'John '.rstrip()
+'John'
+>>> ' John \n\t'.strip()
+'John'
+>>> name = ' John Smith '
+>>> name.lstrip()
+'John Smith '
+```
 
-'John '.rstrip()
+`replace()` method replaces the characters from a string.
+```python
+>>> s = 'hello'
+>>> s.replace('l', 'x')
+'hexxo'
+```
 
-In [ ]:
+`split()` method splits a string by given delimiter.
+```python
+>>> words = 'hello,world'
+>>> words.split(',')
+['hello', 'world']
+```
 
-' John \n\t'.strip()
-
-In [ ]:
-
-name = ' John Smith '
-name.lstrip()
-
-In [ ]:
-
-s = 'hello'
-
-In [ ]:
-
-s.replace('l', 'x')
-
-In [ ]:
-
-s
-
-Strings are immutable
-In [ ]:
-
-s = 'hello' # s.append('world')
-
-In [ ]:
-
-new_string = s + ' world'
-
-In [ ]:
-
-s
-
-In [ ]:
-
-new_string
-
-In [ ]:
-
-s = s + ' world'
-
-In [ ]:
-
-s
-
-In [ ]:
-
-s = 'hello, world'
-
-In [ ]:
-
-words = s.split(',')
-
-In [ ]:
-
-words
-
-In [ ]:
-
-s = 'hello world'
-s.find('hello')
-
-'hello world'.find('hello') # find a string within a string
-
-In [ ]:
+string also supports search. `find()` method finds a given substring from a string.
+```python
+>>> words.find('world')
+6
+>>> words.find('hi')
+-1
+```
 
 'hello1' in 'hello world' # use in find if the string exists
-
-In [ ]:
-
 import re
-
-In [ ]:
-
 s = 'abc,def-xyz'
-
-In [ ]:
-
 s.split(',-')
-
-In [ ]:
-
 re.split(r'[,-]', s)
-
-In [ ]:
-
 name = input('Please enter your name: ')
-
+```
 Exercise 1
 
 Write a program that gets user name from terminal and prints a welcome message like "Hello John Smith, Welcome!" with name in titlecase.

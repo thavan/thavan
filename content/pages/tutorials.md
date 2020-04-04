@@ -9,7 +9,6 @@ This is a series of articles aimed to introduce Python to beginners.
 * [Introduction]({{<ref "/tutorials/python-beginner/2019-11-14-introduction.md">}})
 * [Installing Python]({{<ref "/tutorials/python-beginner/2019-11-17-installing-python.md">}})
 * [Python Basics]({{<ref "/tutorials/python-beginner/python-basics.md">}})
-* [Variable and Basic Data types]({{<ref "/tutorials/python-beginner/variables-and-simple-data-types.md">}})
 * ...
 * ...
 
