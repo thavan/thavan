@@ -1,0 +1,24 @@
+body {
+  line-height: 1;
+}
+
+.site-header-bottom {
+  margin-bottom: 5px;
+}
+
+.site-title {
+  margin-top: 2px;
+}
+
+.site-navi-items {
+  margin-top: 2px;
+}
+
+.article {
+  line-height: 1.2;
+}
+
+.list .article {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  /*border-bottom: solid 4px lightgray;*/

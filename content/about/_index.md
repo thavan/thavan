@@ -1,6 +1,6 @@
 ---
 title: About
-permalink: /about/
+permalink: /about2/
 ---
 
 Welcome! Thank you for visiting. My name is Thavanathan. I live in [Chennai][3] with my wife and daughter.

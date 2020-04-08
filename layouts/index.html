@@ -1,0 +1,25 @@
+
+{{ define "main" }}
+<div class="main" role="main">
+	<div class="row">
+	  	<div class="col-sm col-sm-8">
+		    <article class="article">
+		      {{ .Content }}
+		    </article>
+		</div>
+		<div class="col-sm">
+		    <h3 class="h3">Recent Posts</h3>
+		    <section class="list {{ .Kind }}-list">
+		      {{- $paginator := .Paginator }}
+		      {{- range $paginator.Pages }}
+		      <article class="article">
+		        <a href="{{ .Permalink | relURL }}" class="article-titles">
+		          {{ .Title }}
+		        </a>
+		      </article>
+		      {{- end }}
+		    </section>
+		</div>
+	</div>
+</div>
+{{ end }}

@@ -2,6 +2,12 @@ baseURL = "http://www.thavanathan.com/"
 languageCode = "en-us"
 title = "Thavanathan"
 theme = "whiteplain"
+copyright = "&copy; Copyright 2020 Thavanathan"
+
+[params.author]
+  name = "Thavanathan"
+  # Gravatar or Abatar image
+  gravatar = "thavanathan.t@gmail.com"
 
 [[menu.main]]
     name = "Home" #Name in the navigation bar
@@ -14,14 +20,16 @@ theme = "whiteplain"
 [[menu.main]]
     name = "Tutorials"
     weight = 30
-    url = "/pages/tutorials/"
+    url = "/tutorials/"
 [[menu.main]]
-    name = "About"
-    weight = 40
-    url = "/about/"
+  name = "About"
+  identifier = "about"
+  url = "/about/"
+  weight = 40
 
 [markup]
   [markup.highlight]
     style = "monokai"
     tabWidth = 4
+    linenos = true
     

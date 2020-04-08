@@ -6,10 +6,11 @@ date: 2020-04-04
 ## Python Beginner Tutorial
 This is a series of articles aimed to introduce Python to beginners.
 
-* [Introduction]({{<ref "/tutorials/python-beginner/2019-11-14-introduction.md">}})
-* [Installing Python]({{<ref "/tutorials/python-beginner/2019-11-17-installing-python.md">}})
-* [Python Basics]({{<ref "/tutorials/python-beginner/python-basics.md">}})
-* [Basic Data Types]({{<ref "/tutorials/python-beginner/ch-04-simple-data-types">}})
+* [1. Introductionhhhhh]({{<relref "python-beginner/ch-01-introduction">}})
+* [2. Installing Python]({{<ref "/tutorials/python-beginner/ch-02-installing-python">}})
+* [3. Python Basics]({{<ref "/tutorials/python-beginner/ch-03-python-basics">}})
+* [4. Basic Data Types]({{<ref "/tutorials/python-beginner/ch-04-simple-data-types">}})
+* [5. Lists, tuples and sets]({{<ref "/tutorials/python-beginner/ch-05-lists-tuples-sets">}})
 * ...
 
 
