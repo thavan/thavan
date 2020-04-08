@@ -1,4 +1,4 @@
-baseURL = "http://www.thavanathan.com/"
+baseURL = "https://www.thavanathan.com/"
 languageCode = "en-us"
 title = "Thavanathan"
 theme = "whiteplain"
