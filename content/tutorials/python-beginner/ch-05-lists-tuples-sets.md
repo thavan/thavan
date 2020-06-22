@@ -268,3 +268,6 @@ Let's do some mathematic operations on set.
 In this section we learned about lists, tuples and sets. We covered these three
 types in one chapter because they can be somewhat related to each other. Let's
 learn about dictionary in next chapter.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTg4MTUxMDMyOV19
+-->
