@@ -5,9 +5,7 @@ draft: true
 toc: true
 ---
 ## Introduction
-In this chapter, we will learn about Python dictionaries. It is n other languages, it is sometimes called as hash map. Dictionary is a sequence type. Every item
-in a dictionary has a key and corresponding value. `key` is just a name
-of that value. To understand it further, let's define a dictionary.
+In this chapter, we will learn about Python dictionaries. It is n other languages, it is sometimes called as hash map in other languages.  Every item in a dictionary has a key and corresponding value. `key` is just a name of that value. To understand it further, let's define a dictionary.
 
 ![Dictionary Image](/assets/images/dict.jpg)
 
@@ -129,5 +127,5 @@ through key value pairs and doing basic calculations. As we have not yet
 covered control flow topics like `if` `for` statements, we will cover more
 examples of dictionary we study those chapters.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjM5NTEwMjhdfQ==
+eyJoaXN0b3J5IjpbNjY0MzUwNDM0XX0=
 -->
