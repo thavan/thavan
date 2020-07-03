@@ -13,6 +13,7 @@ This is a series of articles aimed to introduce Python to beginners.
 * [3. Python Basics]({{<ref "/tutorials/python-beginner/ch-03-python-basics">}})
 * [4. Basic Data Types]({{<ref "/tutorials/python-beginner/ch-04-simple-data-types">}})
 * [5. Lists, tuples and sets]({{<ref "/tutorials/python-beginner/ch-05-lists-tuples-sets">}})
+* [6. Dictionary]({{<ref "tutorials/python-beginner/ch-06-dictionary/">}})
 * coming soon.
 
 
