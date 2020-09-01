@@ -15,6 +15,7 @@ This is a series of articles aimed to introduce Python to beginners.
 * [5. Lists, tuples and sets]({{<ref "/tutorials/python-beginner/ch-05-lists-tuples-sets">}})
 * [6. Dictionary]({{<ref "tutorials/python-beginner/ch-06-dictionary/">}})
 * [7. Control Flow]({{<ref "tutorials/python-beginner/ch-07-control-flow/">}})
+* [8. Thinking Pythonic]({{<ref "tutorials/python-beginner/ch-08-thinking-pythonic/">}})
 * coming soon.
 
 
