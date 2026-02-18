@@ -58,3 +58,6 @@ Posts use a similar structure but may vary. The `toc: true` field enables a tabl
 - Hugo version pinned to `0.128.0` in `.github/workflows/hugo.yml`; use a compatible local version to avoid rendering differences.
 - Syntax highlighting uses the `monokai` style with `tabWidth = 4` and line numbers enabled (`config.toml`).
 - Internal links use Hugo's `ref` shortcode: `{{< ref "/path/to/file.md" >}}`.
+
+## Other Notes
+- Don't add claude or any other model as co-author in commit.
