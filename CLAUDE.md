@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A Hugo static site for [thavanathan.com](https://www.thavanathan.com/), deployed via Netlify. It uses the `whiteplain` theme. Content is written in Markdown with Hugo front matter.
+A Hugo static site for [thavanathan.com](https://www.thavanathan.com/), deployed via GitHub Pages using GitHub Actions. It uses the `whiteplain` theme. Content is written in Markdown with Hugo front matter.
 
 ## Common Commands
 
@@ -12,7 +12,7 @@ A Hugo static site for [thavanathan.com](https://www.thavanathan.com/), deployed
 # Start local dev server with drafts visible
 hugo server -D
 
-# Build for production (same as Netlify)
+# Build for production
 hugo --gc --minify
 
 # Create a new post
@@ -55,6 +55,6 @@ Posts use a similar structure but may vary. The `toc: true` field enables a tabl
 
 - When a new tutorial chapter is published (moved from `drafts/` to `tutorials/`), **manually add it to `content/_index.md`** — the homepage list is not auto-generated.
 - The `layouts/partials/head_custom.html` overrides a theme partial for custom `<head>` content.
-- Hugo version pinned to `0.64.1` in `netlify.toml`; use a compatible local version to avoid rendering differences.
+- Hugo version pinned to `0.128.0` in `.github/workflows/hugo.yml`; use a compatible local version to avoid rendering differences.
 - Syntax highlighting uses the `monokai` style with `tabWidth = 4` and line numbers enabled (`config.toml`).
 - Internal links use Hugo's `ref` shortcode: `{{< ref "/path/to/file.md" >}}`.
